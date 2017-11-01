@@ -4,12 +4,14 @@ import { ElModule } from 'element-angular';
 
 import { AppComponent } from './app.component';
 import { HeadComponent } from './head.component';
+import { FootComponent } from './foot.component';
 import 'element-theme-default';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeadComponent
+    HeadComponent,
+    FootComponent
   ],
   imports: [
     BrowserModule,
