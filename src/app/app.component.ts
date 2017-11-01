@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+  handle(time: number): void {
+    // [time] is string
+    // date style follow format props
+    console.log(time);
+  }
+  clearClickHandle(time: number): void {
+  }
 }
