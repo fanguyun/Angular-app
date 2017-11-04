@@ -1,6 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 
 @import "~element-theme-default";
+@import "./assets/fonts/iconfont.css";
 html,
 body,
 div,
@@ -64,8 +65,8 @@ tr,
 th,
 td,
 textarea {
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
 }
 
 address,
@@ -74,20 +75,19 @@ dfn,
 em,
 var,
 i {
-  font-style: normal;
+    font-style: normal;
 }
 
 body {
-  font-size: 16px;
-  line-height: 1.5;
-  font-family: 'Microsoft Yahei', 'simsun', 'arial', 'tahoma';
-  color: #222;
-  background: #eee;
+    font-size: 12px;
+    line-height: 1.5;
+    font-family: 'Microsoft Yahei', 'simsun', 'arial', 'tahoma';
+    color: #333;
 }
 
 table {
-  border-collapse: collapse;
-  border-spacing: 0;
+    border-collapse: collapse;
+    border-spacing: 0;
 }
 
 h1,
@@ -97,52 +97,149 @@ h4,
 h5,
 h6,
 th {
-  font-size: 100%;
-  font-weight: normal;
+    font-size: 100%;
+    font-weight: normal;
 }
 
 button,
 input,
 select,
 textarea {
-  font-size: 100%;
+    font-size: 100%;
 }
 
 fieldset,
 img {
-  border: 0;
+    border: 0;
 }
 
 a {
-  text-decoration: none;
-  color: #666;
-  background: none
+    text-decoration: none;
+    color: #666;
+    background: none
+}
+
+a:hover {
+    color: #20A0FF;
 }
 
 ul,
 ol {
-  list-style: none;
+    list-style: none;
 }
 
 :focus {
-  outline: none;
+    outline: none;
 }
 
 .clearfix {
-  clear: both;
-  content: "";
-  display: block;
-  overflow: hidden
+    clear: both;
+    content: "";
+    display: block;
+    overflow: hidden
 }
 
 .clear {
-  clear: both;
+    clear: both;
 }
 
 .fl {
-  float: left;
+    float: left;
 }
 
 .fr {
-  float: right;
+    float: right;
+}
+
+.ds_inline {
+    display: inline-block;
+}
+
+
+/*head*/
+
+.ali_head {
+    width: 100%;
+    height: 80px;
+    border-bottom: 1px solid #efefef;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .3);
+}
+
+
+/*cont*/
+
+.ali_cont {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.ali_logo {
+    font-size: 36px;
+    color: #1D8CE0;
+    line-height: 80px;
+    display: inline-block;
+}
+
+
+/*注册登陆*/
+
+.ali_login_cont {
+    position: relative;
+    width: 100%;
+    min-width: 1200px;
+    height: 550px;
+    background: url(/assets/images/login_bg.jpg) no-repeat center center;
+    background-size: cover;
+}
+
+.ali_er_form {
+    position: absolute;
+    top: 60px;
+    right: 100px;
+    width: 300px;
+    padding: 10px 30px 60px 30px;
+    background: #fff;
+    border: 1px solid #efefef;
+    box-shadow: 0 0 10px rgba(237, 239, 241, .5);
+}
+
+.ali_er_form .el-row {
+    line-height: 36px;
+    margin: 15px 0 20px 0;
+}
+
+.no_marginbottom {
+    margin-bottom: 8px!important;
+}
+
+.ali_from {
+    position: relative;
+}
+
+.ali_from .el-input__inner {
+    padding-left: 36px;
+}
+
+.ali_from .icon {
+    position: absolute;
+    top: 0;
+    left: 10px;
+    color: #999;
+}
+
+
+/*foot*/
+
+.ali_foot {
+    width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 35px;
+    margin-top: 30px;
+    color: #666;
+}
+
+input:-webkit-autofill {
+    background-image: none;
+    box-shadow: 0 0 0 1000px #fafcfd inset;
 }
