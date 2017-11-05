@@ -228,6 +228,45 @@ ol {
 }
 
 
+/*menu*/
+
+.el-menu {
+    background: none;
+}
+
+.el-menu--horizontal .el-menu-item {
+    height: 82px;
+    line-height: 82px;
+}
+
+.el-menu-item,
+.el-submenu__title {
+    padding: 0 30px;
+}
+
+.el-menu--horizontal.el-menu--dark .el-submenu .el-menu-item.is-active,
+.el-menu-item.is-active {
+    border-bottom: 4px solid #20a0ff;
+}
+
+.el-menu--horizontal>.el-menu-item:hover,
+.el-menu--horizontal>.el-submenu.is-active .el-submenu__title,
+.el-menu--horizontal>.el-submenu:hover .el-submenu__title {
+    border-bottom: 4px solid #20A0FF;
+    background: none;
+}
+
+.user_seting {
+    line-height: 80px;
+    text-align: right;
+    color: #666;
+}
+
+.user_seting a:hover {
+    cursor: pointer;
+}
+
+
 /*foot*/
 
 .ali_foot {

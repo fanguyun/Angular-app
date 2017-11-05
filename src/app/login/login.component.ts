@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Md5} from "ts-md5/dist/md5";
 import { ElMessageService } from 'element-angular';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -10,13 +11,16 @@ export class LoginComponent implements OnInit {
   phoneReg: RegExp;
   emailReg: RegExp;
   constructor(
-    private message: ElMessageService
+    private message: ElMessageService,
+    private router: Router
   ) {
     this.phoneReg = /^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1}))+\d{8})$/;
     this.emailReg = /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+$/;
+    localStorage.setItem('meunInfo', 'no');
   }
   ngOnInit() {
   }
+
   loginSubmit(userName: any, passWord: any): void {
     if (!userName) {
       this.message['error']('账号不能为空!');
@@ -30,6 +34,9 @@ export class LoginComponent implements OnInit {
           console.log(userName);
           console.log(Md5.hashStr(passWord));
           this.message['success']('登陆成功！');
+          localStorage.setItem('meunInfo', 'yes');
+          window.location.href = '/main';
+          // this.router.navigate(['/main']);
         }
       }
     }
