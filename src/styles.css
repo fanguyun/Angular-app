@@ -180,6 +180,10 @@ ol {
     display: inline-block;
 }
 
+.ali_logo:hover {
+    cursor: pointer;
+}
+
 
 /*注册登陆*/
 
@@ -264,6 +268,10 @@ ol {
 
 .user_seting a:hover {
     cursor: pointer;
+}
+
+.el-col {
+    min-height: 1px;
 }
 
 
