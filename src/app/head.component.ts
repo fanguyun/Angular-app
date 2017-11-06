@@ -63,6 +63,14 @@ export class HeadComponent implements OnInit {
       {name: '项 目', url: '/object'},
       {name: '培 训', url: '/train'}
     ];
+    let scope = this;
+    setTimeout(function(){
+      if (scope.router.url === '/login' || scope.router.url === '/register') {
+        scope.isMenu = false;
+      } else {
+        scope.isMenu = true;
+      }
+    }, 100);
   }
   goPage (url: string): void {
     window.location.href = url;
