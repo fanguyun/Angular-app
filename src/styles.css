@@ -160,6 +160,7 @@ ol {
 
 .ali_head {
     width: 100%;
+    min-width:1200px;
     height: 80px;
     border-bottom: 1px solid #efefef;
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .3);
@@ -248,9 +249,8 @@ ol {
     padding: 0 30px;
 }
 
-.el-menu--horizontal.el-menu--dark .el-submenu .el-menu-item.is-active,
-.el-menu-item.is-active {
-    border-bottom: 4px solid #20a0ff;
+.el-menu--horizontal>.el-menu-item.is-active, .el-menu--horizontal>.el-submenu.is-active .el-submenu__title{
+    border-bottom: 4px solid #20A0FF;
 }
 
 .el-menu--horizontal>.el-menu-item:hover,
