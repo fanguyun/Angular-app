@@ -43,7 +43,7 @@ import { Router } from '@angular/router';
 export class HeadComponent implements OnInit {
   title = '处理中心';
   isMenu: boolean;
-  menuList: any;
+  menuList: Array<{name: string, url: string}>;
   constructor(
     private router: Router
   ) {
@@ -55,14 +55,15 @@ export class HeadComponent implements OnInit {
         scope.isMenu = true;
       }
     }, 600);
-    scope.menuList = [
+  }
+  ngOnInit() {
+    this.menuList = [
       {name: '首 页', url: '/main'},
       {name: '招 聘', url: '/zhaopin'},
       {name: '项 目', url: '/object'},
       {name: '培 训', url: '/train'}
     ];
   }
-  ngOnInit() {}
   goPage (url: string): void {
     window.location.href = url;
   }
