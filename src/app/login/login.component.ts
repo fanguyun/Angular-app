@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {Md5} from "ts-md5/dist/md5";
 import { ElMessageService } from 'element-angular';
 import { Router } from '@angular/router';
+import {Md5} from "ts-md5/dist/md5";
+import { LoginService } from "./../service/login.service";
 
 @Component({
   selector: 'app-login',
@@ -12,13 +13,19 @@ export class LoginComponent implements OnInit {
   emailReg: RegExp;
   constructor(
     private message: ElMessageService,
-    private router: Router
+    private router: Router,
+    private loginService: LoginService
   ) {
     this.phoneReg = /^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1}))+\d{8})$/;
     this.emailReg = /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+$/;
     localStorage.setItem('meunInfo', 'no');
   }
   ngOnInit() {
+    this.loginService.loginIn().subscribe(data => {
+       if (data) {
+         console.log(data);
+       }
+    });
   }
 
   loginSubmit(userName: any, passWord: any): void {
