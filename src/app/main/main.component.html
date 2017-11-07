@@ -1,3 +1,57 @@
-<p>
-  main works!
-</p>
+<div class="ali_body">
+    <div class="ali_bodycont">
+        <div el-row class="ali_serach">
+            <div el-col span="14">
+                <el-input [model]="input" placeholder="请输入内容" [ngStyle]="{'border-radius':'0px'}"></el-input>
+            </div>
+            <div el-col span="4">
+                <el-select [model]="value" placeholder="请选择" (modelChange)="handle($event)">
+                    <el-option *ngFor="let item of cityList" [label]="item.label" [value]="item.value">
+                    </el-option>
+                </el-select>
+            </div>
+            <div el-col span="4">
+                <el-button type="primary" icon="search" (click)="clear()">搜索</el-button>
+            </div>
+        </div>
+        <div el-row class="ali_tips">
+            热门标签：
+            <span>JAVA</span>
+            <span>PHP</span>
+            <span>C++</span>
+            <span>前端开发</span>
+            <span>IOS</span>
+            <span>安卓</span>
+            <span>运营</span>
+            <span>测试</span>
+        </div>
+
+        <div class="ali_maintab">
+            <el-button-group>
+                <el-button>求 职</el-button>
+                <el-button>招 聘</el-button>
+                <el-button>项 目</el-button>
+            </el-button-group>
+            <el-card class="box-card">
+                列表项
+            </el-card>
+        </div>
+
+        <div class="ali_list">
+            <el-card class="box-card">
+                列表项
+            </el-card>
+            <el-card class="box-card">
+                列表项
+            </el-card>
+            <el-card class="box-card">
+                列表项
+            </el-card>
+        </div>
+        <!--分页-->
+        <div class="ali_pages">
+            <el-pagination [total]="40" [layout]="['prev', 'pager', 'next', 'jumper', 'size', 'total']" [page-sizes]="[10,20,30,50]">
+            </el-pagination>
+        </div>
+    </div>
+</div>

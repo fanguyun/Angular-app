@@ -12,7 +12,7 @@ export class RegisterComponent implements OnInit {
   emailReg: RegExp;
   passwordReg: RegExp;
   isSend: boolean;
-  val: boolean;
+  isCheck: boolean;
   timer: number;
   sendText: string;
   constructor(
@@ -21,7 +21,6 @@ export class RegisterComponent implements OnInit {
     this.phoneReg = /^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1}))+\d{8})$/;
     this.emailReg = /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+$/;
     this.passwordReg = /^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,16}$/;
-    this.val = true;
     this.isSend = false;
     this.timer = 60;
     this.sendText = '发送验证码';
@@ -29,6 +28,7 @@ export class RegisterComponent implements OnInit {
   ngOnInit() {
   }
   handle(event: any): void {
+    this.isCheck = event;
     console.log('event', event);
   }
   sendCode(userName: any): void {
@@ -68,8 +68,6 @@ export class RegisterComponent implements OnInit {
               if (!checkCode) {
                 this.message['error']('请输入验证码!');
               } else {
-                console.log(userName);
-                console.log(Md5.hashStr(passWord));
                 this.message['success']('注册成功！');
               }
             }

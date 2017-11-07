@@ -160,7 +160,7 @@ ol {
 
 .ali_head {
     width: 100%;
-    min-width:1200px;
+    min-width: 1200px;
     height: 80px;
     border-bottom: 1px solid #efefef;
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .3);
@@ -227,9 +227,13 @@ ol {
 
 .ali_from .icon {
     position: absolute;
-    top: 0;
+    top: 2px;
     left: 10px;
     color: #999;
+}
+
+.ali_tips {
+    margin: 10px 0;
 }
 
 
@@ -249,8 +253,10 @@ ol {
     padding: 0 30px;
 }
 
-.el-menu--horizontal>.el-menu-item.is-active, .el-menu--horizontal>.el-submenu.is-active .el-submenu__title{
+.el-menu--horizontal>.el-menu-item.is-active,
+.el-menu--horizontal>.el-submenu.is-active .el-submenu__title {
     border-bottom: 4px solid #20A0FF;
+    color: #20A0FF;
 }
 
 .el-menu--horizontal>.el-menu-item:hover,
@@ -258,6 +264,7 @@ ol {
 .el-menu--horizontal>.el-submenu:hover .el-submenu__title {
     border-bottom: 4px solid #20A0FF;
     background: none;
+    color: #878d99;
 }
 
 .user_seting {
@@ -272,6 +279,51 @@ ol {
 
 .el-col {
     min-height: 1px;
+}
+
+.el-menu--horizontal {
+    border: none;
+}
+
+
+/*body*/
+
+.ali_body {
+    width: 100%;
+    background: #f2f2f4;
+    padding: 30px 0;
+}
+
+.ali_bodycont {
+    width: 1200px;
+    margin: 0 auto;
+    color: #999;
+}
+
+.ali_serach .el-input__inner,
+.ali_serach .el-button {
+    border-radius: 0;
+}
+
+.ali_bodycont span {
+    margin: 0 3px;
+}
+
+.ali_maintab {
+    margin: 25px 0;
+}
+
+.ali_maintab .el-button {
+    border-radius: 0;
+}
+
+.ali_pages {
+    text-align: center;
+    margin: 25px auto;
+}
+
+.ali_list .el-card {
+    margin-bottom: 5px;
 }
 
 

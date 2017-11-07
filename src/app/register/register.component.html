@@ -37,11 +37,11 @@
         </div>
         <div el-row class="no_marginbottom">
             <div el-col span="24">
-                <el-button type="primary" style="width:100%;" (click)="resigterSubmit(userName.value, passWord.value, compassWord.value, checkCode.value)">注 册</el-button>
+                <el-button type="primary" style="width:100%;" (click)="resigterSubmit(userName.value, passWord.value, compassWord.value, checkCode.value)" [disabled]="!isCheck">注 册</el-button>
             </div>
         </div>
         <div>
-            <el-checkbox [model]="val" (modelChange)="handle($event)"></el-checkbox>
+            <el-checkbox [model]="isCheck" (modelChange)="handle($event)"></el-checkbox>
             <span class="box-card" #card>
                 <el-button type="text" style="padding:10px 0px;font-size:12px;" (click)="card.toggle = true">用户注册协议</el-button>
                 <el-dialog [title]="'雄才联盟用户注册协议'" [(visible)]="card.toggle">
