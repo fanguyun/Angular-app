@@ -313,7 +313,8 @@ ol {
     margin: 25px 0;
 }
 
-.ali_maintab .el-button {
+.ali_maintab .el-button,
+.ali_maintab .el-card {
     border-radius: 0;
 }
 
@@ -335,6 +336,7 @@ ol {
     text-align: center;
     line-height: 35px;
     margin-top: 30px;
+    margin-bottom: 30px;
     color: #666;
 }
 
