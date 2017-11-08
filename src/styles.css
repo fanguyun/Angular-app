@@ -327,6 +327,11 @@ ol {
     margin-bottom: 5px;
 }
 
+.el-button--warning {
+    background: #f07c0f;
+    border-color: #f07c0f;
+}
+
 
 /*foot*/
 
