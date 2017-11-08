@@ -15,6 +15,7 @@ import { FootComponent } from './foot.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { MainComponent } from './main/main.component';
+import { JoinComponent } from './join/join.component';
 
 /*服务*/
 import { LoginService } from "./service/login.service";
@@ -24,7 +25,8 @@ const routes: Routes = [
   {path: '', redirectTo: '/login', pathMatch: 'full'},
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
-  {path: 'main', component: MainComponent}
+  {path: 'main', component: MainComponent},
+  {path: 'join', component: JoinComponent}
 ];
 
 @NgModule({
@@ -34,7 +36,8 @@ const routes: Routes = [
     FootComponent,
     LoginComponent,
     RegisterComponent,
-    MainComponent
+    MainComponent,
+    JoinComponent
   ],
   imports: [
     BrowserModule,
