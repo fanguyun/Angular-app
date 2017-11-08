@@ -316,6 +316,7 @@ ol {
 .ali_maintab .el-button,
 .ali_maintab .el-card {
     border-radius: 0;
+    margin-top: -1px;
 }
 
 .ali_pages {
