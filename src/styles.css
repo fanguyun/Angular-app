@@ -250,6 +250,12 @@ ol {
 
 .el-menu-item,
 .el-submenu__title {
+    padding: 0;
+}
+
+.el-menu--horizontal .el-menu-item a {
+    display: block;
+    height: 82px;
     padding: 0 30px;
 }
 
@@ -324,7 +330,7 @@ ol {
     margin: 25px auto;
 }
 
-.ali_list .el-card {
+.el-card {
     margin-bottom: 5px;
 }
 
@@ -349,4 +355,86 @@ ol {
 input:-webkit-autofill {
     background-image: none;
     box-shadow: 0 0 0 1000px #fafcfd inset;
+}
+
+.el-collapse-item__header,
+.el-collapse-item__wrap {
+    background: none;
+    color: #666;
+}
+
+.el-collapse {
+    border-top: none;
+}
+
+.ali_li {
+    width: 163px;
+    height: 38px;
+    margin: 10px 15px;
+    background: #fee409;
+    text-align: center;
+    line-height: 38px;
+    font-size: 14px;
+}
+
+ul.ali_li-list {
+    line-height: 25px;
+    width: 133px;
+    margin: 0 30px;
+}
+
+.ali_list .ali_card-list {
+    padding: 10px 20px;
+}
+
+.ali_zwname {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.ali_zwmoney {
+    font-size: 18px;
+    margin: 5px 0 15px 0;
+    color: #F7BA2A;
+}
+
+.ali_text_list {
+    line-height: 22px;
+}
+
+.ali_addlist {
+    margin-top: 15px;
+    font-size: 18px;
+}
+
+.ali_comname {
+    font-size: 20px;
+    margin-top: 65px;
+    color: #666;
+}
+
+.ali_text {
+    margin: 10px 0 20px 0;
+    font-size: 16px;
+}
+
+.el-checkbox__label {
+    font-size: 12px;
+}
+
+.el-checkbox+.el-checkbox {
+    margin-left: 10px;
+}
+
+.ali_bodycont span {
+    margin: 0;
+}
+
+.serach_result {
+    margin-top: 10px;
+}
+
+.ali_select_list {
+    line-height: 28px;
+    color: #333;
 }

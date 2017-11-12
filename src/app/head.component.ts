@@ -37,6 +37,9 @@ import { Router } from '@angular/router';
   .h_regise{
     line-height:80px;
   }
+  .el-menu--horizontal .el-menu-item a{
+    display:block;
+  }
   `]
 })
 
