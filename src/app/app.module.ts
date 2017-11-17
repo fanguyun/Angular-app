@@ -16,6 +16,7 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { MainComponent } from './main/main.component';
 import { JoinComponent } from './join/join.component';
+import { JoinshowComponent } from './joinshow/joinshow.component';
 
 /*服务*/
 import { LoginService } from "./service/login.service";
@@ -26,7 +27,13 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'main', component: MainComponent},
-  {path: 'join', component: JoinComponent}
+  {
+    path: 'join', component: JoinComponent, children: [ // 嵌套子路由
+      {path: 'show', component: JoinshowComponent}
+      //{path: '**', redirectTo: "show"} // 默认子路由
+    ]
+  },
+
 ];
 
 @NgModule({
@@ -37,7 +44,8 @@ const routes: Routes = [
     LoginComponent,
     RegisterComponent,
     MainComponent,
-    JoinComponent
+    JoinComponent,
+    JoinshowComponent
   ],
   imports: [
     BrowserModule,

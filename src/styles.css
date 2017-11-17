@@ -233,7 +233,11 @@ ol {
 }
 
 .ali_tips {
-    margin: 10px 0;
+    margin: 10px 0 15px 0;
+}
+
+.ali_tips span {
+    margin-right: 10px!important;
 }
 
 

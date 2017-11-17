@@ -1,5 +1,30 @@
 <div class="ali_body">
     <div class="ali_bodycont">
+        <div el-row class="ali_serach">
+            <div el-col span="14">
+                <el-input [model]="input" placeholder="请输入内容" [ngStyle]="{'border-radius':'0px'}"></el-input>
+            </div>
+            <div el-col span="4">
+                <el-select [model]="value" placeholder="请选择" (modelChange)="handle($event)">
+                    <el-option *ngFor="let item of cityList" [label]="item.label" [value]="item.value">
+                    </el-option>
+                </el-select>
+            </div>
+            <div el-col span="4">
+                <el-button type="primary" icon="search" (click)="clear()">搜索</el-button>
+            </div>
+        </div>
+        <div el-row class="ali_tips">
+            热门标签：
+            <span>Java</span>
+            <span>PHP</span>
+            <span>C++</span>
+            <span>前端开发</span>
+            <span>IOS</span>
+            <span>安卓</span>
+            <span>运营</span>
+            <span>测试</span>
+        </div>
         <div el-row>
             <div el-col span="6" class="ali_join_left">
                 <div class="ali_lcard">
@@ -420,7 +445,9 @@
                     <el-card class="box-card">
                         <div el-row class="ali_card-list">
                             <div el-col span="16">
-                                <p class="ali_zwname">Web前端开发工程师</p>
+                                <p class="ali_zwname">
+                                    <a routerLink="/join/show">Web前端开发工程师</a>
+                                </p>
                                 <p class="ali_zwmoney">20K-40K</p>
                                 <ul class="ali_text_list">
                                     <li>1、与产品、设计、后端工程师一起产出相关产品</li>
