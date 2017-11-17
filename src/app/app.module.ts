@@ -20,6 +20,7 @@ import { JoinshowComponent } from './joinshow/joinshow.component';
 
 /*服务*/
 import { LoginService } from "./service/login.service";
+import { JoinindexComponent } from './joinindex/joinindex.component';
 
 
 const routes: Routes = [
@@ -29,8 +30,9 @@ const routes: Routes = [
   {path: 'main', component: MainComponent},
   {
     path: 'join', component: JoinComponent, children: [ // 嵌套子路由
-      {path: 'show', component: JoinshowComponent}
-      //{path: '**', redirectTo: "show"} // 默认子路由
+      {path: 'index', component: JoinindexComponent},
+      {path: 'show', component: JoinshowComponent},
+      {path: '**', redirectTo: "index"} // 默认子路由
     ]
   },
 
@@ -45,7 +47,8 @@ const routes: Routes = [
     RegisterComponent,
     MainComponent,
     JoinComponent,
-    JoinshowComponent
+    JoinshowComponent,
+    JoinindexComponent
   ],
   imports: [
     BrowserModule,

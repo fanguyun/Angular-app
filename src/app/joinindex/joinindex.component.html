@@ -1,0 +1,583 @@
+<div class="ali_body">
+    <div class="ali_bodycont">
+        <div el-row class="ali_serach">
+            <div el-col span="14">
+                <el-input [model]="input" placeholder="请输入内容" [ngStyle]="{'border-radius':'0px'}"></el-input>
+            </div>
+            <div el-col span="4">
+                <el-select [model]="value" placeholder="请选择" (modelChange)="handle($event)">
+                    <el-option *ngFor="let item of cityList" [label]="item.label" [value]="item.value">
+                    </el-option>
+                </el-select>
+            </div>
+            <div el-col span="4">
+                <el-button type="primary" icon="search" (click)="clear()">搜索</el-button>
+            </div>
+        </div>
+        <div el-row class="ali_tips">
+            热门标签：
+            <span>Java</span>
+            <span>PHP</span>
+            <span>C++</span>
+            <span>前端开发</span>
+            <span>IOS</span>
+            <span>安卓</span>
+            <span>运营</span>
+            <span>测试</span>
+        </div>
+        <div el-row>
+            <div el-col span="6" class="ali_join_left">
+                <div class="ali_lcard">
+                    <div class="el-collapse-item__header" role="button">
+                        所有行业
+                        <i class="el-collapse-item__arrow el-icon-arrow-right"></i>
+                    </div>
+                    <ul>
+                        <li>
+                            <a href="#">互联网</a>
+                        </li>
+                        <li>
+                            <a href="#">移动互联网</a>
+                        </li>
+                        <li>
+                            <a href="#">传媒</a>
+                        </li>
+                        <li>
+                            <a href="#">金融</a>
+                        </li>
+                        <li>
+                            <a href="#">房产</a>
+                        </li>
+                        <li>
+                            <a href="#">制造业</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="ali_lcard">
+                    <div class="el-collapse-item__header" role="button">
+                        技术
+                        <i class="el-collapse-item__arrow el-icon-arrow-right"></i>
+                    </div>
+                    <ul>
+                        <li>
+                            <a href="#">Java </a>
+                        </li>
+                        <li>
+                            <a href="#">C++ </a>
+                        </li>
+                        <li>
+                            <a href="#">PHP</a>
+                        </li>
+                        <li>
+                            <a href="#">数据挖掘</a>
+                        </li>
+                        <li>
+                            <a href="#">搜索算法</a>
+                        </li>
+                        <li>
+                            <a href="#">精准推荐</a>
+                        </li>
+                        <li><a href="#">全栈工程师</a></li>
+                        <li>
+                            <a href="#">Hadoop</a>
+                        </li>
+                        <li>
+                            <a href="#">Python</a>
+                        </li>
+                        <li>
+                            <a href="#">Delphi</a>
+                        </li>
+                        <li>
+                            <a href="#">Node.js</a>
+                        </li>
+                        <li>
+                            <a href="#">Shell</a>
+                        </li>
+                        <li>
+                            <a href="#">后端开发其它</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="ali_lcard">
+                    <div class="el-collapse-item__header" role="button">
+                        产品
+                        <i class="el-collapse-item__arrow el-icon-arrow-right"></i>
+                    </div>
+                    <ul>
+                        <li>
+                            <a href="#">产品经理</a>
+                        </li>
+                        <li>
+                            <a href="#">移动产品经理</a>
+                        </li>
+                        <li>
+                            <a href="#">电商产品经理</a>
+                        </li>
+                        <li>
+                            <a href="#">数据产品经理</a>
+                        </li>
+                        <li>
+                            <a href="#">产品总监</a>
+                        </li>
+                        <li>
+                            <a href="#">游戏制作人</a>
+                        </li>
+                        <li><a href="#">产品部经理</a></li>
+                        <li>
+                            <a href="#">产品实习生</a>
+                        </li>
+                        <li>
+                            <a href="#">网页产品设计师</a>
+                        </li>
+                        <li>
+                            <a href="#">无线产品设计师</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="ali_lcard">
+                    <div class="el-collapse-item__header" role="button">
+                        设计
+                        <i class="el-collapse-item__arrow el-icon-arrow-right"></i>
+                    </div>
+                    <ul>
+                        <li>
+                            <a href="#">视觉设计师</a>
+                        </li>
+                        <li>
+                            <a href="#">网页设计师</a>
+                        </li>
+                        <li>
+                            <a href="#">Flash设计师</a>
+                        </li>
+                        <li>
+                            <a href="#">APP设计师</a>
+                        </li>
+                        <li>
+                            <a href="#">UI设计师</a>
+                        </li>
+                        <li>
+                            <a href="#">平面设计师</a>
+                        </li>
+                        <li><a href="#">美术设计师（2D/3D）</a></li>
+                        <li>
+                            <a href="#">广告设计师</a>
+                        </li>
+                        <li>
+                            <a href="#">多媒体设计师</a>
+                        </li>
+                        <li>
+                            <a href="#">游戏特效</a>
+                        </li>
+                        <li>
+                            <a href="#">游戏界面设计师</a>
+                        </li>
+                        <li>
+                            <a href="#">游戏场景</a>
+                        </li>
+                        <li>
+                            <a href="#">游戏动作</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="ali_lcard">
+                    <div class="el-collapse-item__header" role="button">
+                        运营
+                        <i class="el-collapse-item__arrow el-icon-arrow-right"></i>
+                    </div>
+                    <ul>
+                        <li>
+                            <a href="#">用户运营</a>
+                        </li>
+                        <li>
+                            <a href="#">产品运营</a>
+                        </li>
+                        <li>
+                            <a href="#">数据运营</a>
+                        </li>
+                        <li>
+                            <a href="#">内容运营</a>
+                        </li>
+                        <li>
+                            <a href="#">活动运营</a>
+                        </li>
+                        <li>
+                            <a href="#">商家运营</a>
+                        </li>
+                        <li><a href="#">品类运营</a></li>
+                        <li>
+                            <a href="#">游戏运营</a>
+                        </li>
+                        <li>
+                            <a href="#">运营专员</a>
+                        </li>
+                        <li>
+                            <a href="#">网店运营</a>
+                        </li>
+                        <li>
+                            <a href="#">新媒体运营</a>
+                        </li>
+                        <li>
+                            <a href="#">海外运营</a>
+                        </li>
+                        <li>
+                            <a href="#">运营经理</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="ali_lcard">
+                    <div class="el-collapse-item__header" role="button">
+                        市场与销售
+                        <i class="el-collapse-item__arrow el-icon-arrow-right"></i>
+                    </div>
+                    <ul>
+                        <li>
+                            <a href="#">用户运营</a>
+                        </li>
+                        <li>
+                            <a href="#">产品运营</a>
+                        </li>
+                        <li>
+                            <a href="#">数据运营</a>
+                        </li>
+                        <li>
+                            <a href="#">内容运营</a>
+                        </li>
+                        <li>
+                            <a href="#">活动运营</a>
+                        </li>
+                        <li>
+                            <a href="#">商家运营</a>
+                        </li>
+                        <li><a href="#">品类运营</a></li>
+                        <li>
+                            <a href="#">游戏运营</a>
+                        </li>
+                        <li>
+                            <a href="#">运营专员</a>
+                        </li>
+                        <li>
+                            <a href="#">网店运营</a>
+                        </li>
+                        <li>
+                            <a href="#">新媒体运营</a>
+                        </li>
+                        <li>
+                            <a href="#">海外运营</a>
+                        </li>
+                        <li>
+                            <a href="#">运营经理</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="ali_lcard">
+                    <div class="el-collapse-item__header" role="button">
+                        职能
+                        <i class="el-collapse-item__arrow el-icon-arrow-right"></i>
+                    </div>
+                    <ul>
+                        <li>
+                            <a href="#">用户运营</a>
+                        </li>
+                        <li>
+                            <a href="#">产品运营</a>
+                        </li>
+                        <li>
+                            <a href="#">数据运营</a>
+                        </li>
+                        <li>
+                            <a href="#">内容运营</a>
+                        </li>
+                        <li>
+                            <a href="#">活动运营</a>
+                        </li>
+                        <li>
+                            <a href="#">商家运营</a>
+                        </li>
+                        <li><a href="#">品类运营</a></li>
+                        <li>
+                            <a href="#">游戏运营</a>
+                        </li>
+                        <li>
+                            <a href="#">运营专员</a>
+                        </li>
+                        <li>
+                            <a href="#">网店运营</a>
+                        </li>
+                        <li>
+                            <a href="#">新媒体运营</a>
+                        </li>
+                        <li>
+                            <a href="#">海外运营</a>
+                        </li>
+                        <li>
+                            <a href="#">运营经理</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="ali_lcard">
+                    <div class="el-collapse-item__header" role="button">
+                        金融
+                        <i class="el-collapse-item__arrow el-icon-arrow-right"></i>
+                    </div>
+                    <ul>
+                        <li>
+                            <a href="#">用户运营</a>
+                        </li>
+                        <li>
+                            <a href="#">产品运营</a>
+                        </li>
+                        <li>
+                            <a href="#">数据运营</a>
+                        </li>
+                        <li>
+                            <a href="#">内容运营</a>
+                        </li>
+                        <li>
+                            <a href="#">活动运营</a>
+                        </li>
+                        <li>
+                            <a href="#">商家运营</a>
+                        </li>
+                        <li><a href="#">品类运营</a></li>
+                        <li>
+                            <a href="#">游戏运营</a>
+                        </li>
+                        <li>
+                            <a href="#">运营专员</a>
+                        </li>
+                        <li>
+                            <a href="#">网店运营</a>
+                        </li>
+                        <li>
+                            <a href="#">新媒体运营</a>
+                        </li>
+                        <li>
+                            <a href="#">海外运营</a>
+                        </li>
+                        <li>
+                            <a href="#">运营经理</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div el-col span="18" class="ali_join_right">
+                <!--select-->
+                <div el-row class="ali_select_list">
+                    <div el-col span="2">
+                        薪资范围：
+                    </div>
+                    <div el-col span="22">
+                        <el-checkbox-group [model]="[]" (modelChange)="handle($event)">
+                            <el-checkbox label="2000-3000"></el-checkbox>
+                            <el-checkbox label="4000-6000"></el-checkbox>
+                            <el-checkbox label="7000-9000"></el-checkbox>
+                            <el-checkbox label="10000-12000"></el-checkbox>
+                            <el-checkbox label="13000-15000"></el-checkbox>
+                            <el-checkbox label="16000-18000"></el-checkbox>
+                            <el-checkbox label="20000以上"></el-checkbox>
+                            <el-checkbox label="面议"></el-checkbox>
+                        </el-checkbox-group>
+                    </div>
+                </div>
+                <div el-row class="ali_select_list">
+                    <div el-col span="2">
+                        工作年限：
+                    </div>
+                    <div el-col span="22">
+                        <el-checkbox-group [model]="[]" (modelChange)="handle($event)">
+                            <el-checkbox label="实习生"></el-checkbox>
+                            <el-checkbox label="1-2年"></el-checkbox>
+                            <el-checkbox label="3-4年"></el-checkbox>
+                            <el-checkbox label="5-8年"></el-checkbox>
+                            <el-checkbox label="10年以上"></el-checkbox>
+                            <el-checkbox label="不限"></el-checkbox>
+                        </el-checkbox-group>
+                    </div>
+                </div>
+                <div el-row class="ali_select_list">
+                    <div el-col span="2">
+                        公司性质：
+                    </div>
+                    <div el-col span="22">
+                        <el-checkbox-group [model]="[]" (modelChange)="handle($event)">
+                            <el-checkbox label="外资（欧美）"></el-checkbox>
+                            <el-checkbox label="外资（非欧美）"></el-checkbox>
+                            <el-checkbox label="合资"></el-checkbox>
+                            <el-checkbox label="私企"></el-checkbox>
+                            <el-checkbox label="国企"></el-checkbox>
+                            <el-checkbox label="事业单位"></el-checkbox>
+                        </el-checkbox-group>
+                    </div>
+                </div>
+                <div el-row class="ali_select_list">
+                    <div el-col span="2">
+                        学历要求：
+                    </div>
+                    <div el-col span="22">
+                        <el-checkbox-group [model]="[]" (modelChange)="handle($event)">
+                            <el-checkbox label="初中及以下"></el-checkbox>
+                            <el-checkbox label="高中"></el-checkbox>
+                            <el-checkbox label="大专"></el-checkbox>
+                            <el-checkbox label="本科"></el-checkbox>
+                            <el-checkbox label="硕士"></el-checkbox>
+                            <el-checkbox label="博士"></el-checkbox>
+                        </el-checkbox-group>
+                    </div>
+                </div>
+                <div el-row class="ali_select_list">
+                    <div el-col span="2">
+                        公司规模：
+                    </div>
+                    <div el-col span="22">
+                        <el-checkbox-group [model]="[]" (modelChange)="handle($event)">
+                            <el-checkbox label="天使轮"></el-checkbox>
+                            <el-checkbox label="A轮"></el-checkbox>
+                            <el-checkbox label="B轮"></el-checkbox>
+                            <el-checkbox label="C轮"></el-checkbox>
+                            <el-checkbox label="D轮及以上"></el-checkbox>
+                            <el-checkbox label="上市公司"></el-checkbox>
+                            <el-checkbox label="不需要融资"></el-checkbox>
+                        </el-checkbox-group>
+                    </div>
+                </div>
+                <!--list-->
+                <div class="serach_result">
+                    <el-card class="box-card">
+                        <div el-row class="ali_card-list">
+                            <div el-col span="16">
+                                <p class="ali_zwname">
+                                    <a routerLink="/join/show">Web前端开发工程师</a>
+                                </p>
+                                <p class="ali_zwmoney">20K-40K</p>
+                                <ul class="ali_text_list">
+                                    <li>1、与产品、设计、后端工程师一起产出相关产品</li>
+                                    <li>2、抽象通用功能组建，开发基础工具，提高团队效率</li>
+                                    <li>3、参与产品设计讨论，从前端技术角度给予反馈并评估可行性</li>
+                                    <li>4、参与并实践 code review，提高自身与团队能力水平</li>
+                                </ul>
+                                <p class="ali_addlist"><span>上梅林</span> | <span>3-5年</span> | <span>大专</span></p>
+                            </div>
+                            <div el-col span="8">
+                                <p class="ali_comname">万科物业</p>
+                                <p class="ali_text"><span>O2O, 生活服务</span> | <span>2000人以上</span></p>
+                                <p>
+                                    <el-button type="warning">申请职位</el-button>
+                                </p>
+                            </div>
+                        </div>
+                    </el-card>
+                    <el-card class="box-card">
+                        <div el-row class="ali_card-list">
+                            <div el-col span="16">
+                                <p class="ali_zwname">项目策划 </p>
+                                <p class="ali_zwmoney">10K-15K</p>
+                                <ul class="ali_text_list">
+                                    <li>1、与产品、设计、后端工程师一起产出相关产品</li>
+                                    <li>2、抽象通用功能组建，开发基础工具，提高团队效率</li>
+                                    <li>3、参与产品设计讨论，从前端技术角度给予反馈并评估可行性</li>
+                                    <li>4、参与并实践 code review，提高自身与团队能力水平</li>
+                                </ul>
+                                <p class="ali_addlist"><span>坂田</span> | <span>1-3年</span> | <span>不限</span></p>
+                            </div>
+                            <div el-col span="8">
+                                <p class="ali_comname">沃菲数字营销</p>
+                                <p class="ali_text"><span>广告营销,企业服务</span> | <span>50-150人</span></p>
+                                <p>
+                                    <el-button type="warning">申请职位</el-button>
+                                </p>
+                            </div>
+                        </div>
+                    </el-card>
+                    <el-card class="box-card">
+                        <div el-row class="ali_card-list">
+                            <div el-col span="16">
+                                <p class="ali_zwname">产品经理 </p>
+                                <p class="ali_zwmoney">15K-30K</p>
+                                <ul class="ali_text_list">
+                                    <li>负责内部各部门及平台商务拓展、合作洽谈、关系维护等相关工作；</li>
+                                    <li>负责内部资源协调及整合，及合作策划&方案撰写、推动及落地等相关工作；</li>
+                                    <li>负责不同团队之间的沟通和协调工作，推动跨团队合作项目发展；</li>
+                                    <li>主要攻克游戏项目的深度合作，及合作策划&方案撰写、推动及落地等相关工作。</li>
+                                </ul>
+                                <p class="ali_addlist"><span>深圳</span> | <span>1-3年</span> | <span>本科及以上</span></p>
+                            </div>
+                            <div el-col span="8">
+                                <p class="ali_comname">腾讯</p>
+                                <p class="ali_text"><span>移动互联网,游戏</span> | <span>上市公司</span></p>
+                                <p>
+                                    <el-button type="warning">申请职位</el-button>
+                                </p>
+                            </div>
+                        </div>
+                    </el-card>
+                    <el-card class="box-card">
+                        <div el-row class="ali_card-list">
+                            <div el-col span="16">
+                                <p class="ali_zwname">汽车网-销售主任J10772 </p>
+                                <p class="ali_zwmoney">10K-25K</p>
+                                <ul class="ali_text_list">
+                                    <li>1、与产品、设计、后端工程师一起产出相关产品</li>
+                                    <li>2、抽象通用功能组建，开发基础工具，提高团队效率</li>
+                                    <li>3、参与产品设计讨论，从前端技术角度给予反馈并评估可行性</li>
+                                    <li>4、参与并实践 code review，提高自身与团队能力水平</li>
+                                </ul>
+                                <p class="ali_addlist"><span>南山</span> | <span>1-3年</span> | <span>大专</span></p>
+                            </div>
+                            <div el-col span="8">
+                                <p class="ali_comname">太平洋网络有限公司</p>
+                                <p class="ali_text"><span>电子商务, 生活服务</span> | <span>500-2000人</span></p>
+                                <p>
+                                    <el-button type="warning">申请职位</el-button>
+                                </p>
+                            </div>
+                        </div>
+                    </el-card>
+                    <el-card class="box-card">
+                        <div el-row class="ali_card-list">
+                            <div el-col span="16">
+                                <p class="ali_zwname">二类电商广告优化</p>
+                                <p class="ali_zwmoney">10K-15K</p>
+                                <ul class="ali_text_list">
+                                    <li>1、与产品、设计、后端工程师一起产出相关产品</li>
+                                    <li>2、抽象通用功能组建，开发基础工具，提高团队效率</li>
+                                    <li>3、参与产品设计讨论，从前端技术角度给予反馈并评估可行性</li>
+                                    <li>4、参与并实践 code review，提高自身与团队能力水平</li>
+                                </ul>
+                                <p class="ali_addlist"><span>福田</span> | <span>3-5年</span> | <span>大专及以上</span></p>
+                            </div>
+                            <div el-col span="8">
+                                <p class="ali_comname">渡渡鸟</p>
+                                <p class="ali_text"><span>天使轮</span> | <span>2000人以上</span></p>
+                                <p>
+                                    <el-button type="warning">申请职位</el-button>
+                                </p>
+                            </div>
+                        </div>
+                    </el-card>
+                    <el-card class="box-card">
+                        <div el-row class="ali_card-list">
+                            <div el-col span="16">
+                                <p class="ali_zwname">汽车网-销售主任J10772 </p>
+                                <p class="ali_zwmoney">10K-25K</p>
+                                <ul class="ali_text_list">
+                                    <li>1、与产品、设计、后端工程师一起产出相关产品</li>
+                                    <li>2、抽象通用功能组建，开发基础工具，提高团队效率</li>
+                                    <li>3、参与产品设计讨论，从前端技术角度给予反馈并评估可行性</li>
+                                    <li>4、参与并实践 code review，提高自身与团队能力水平</li>
+                                </ul>
+                                <p class="ali_addlist"><span>南山</span> | <span>1-3年</span> | <span>大专</span></p>
+                            </div>
+                            <div el-col span="8">
+                                <p class="ali_comname">太平洋网络有限公司</p>
+                                <p class="ali_text"><span>电子商务, 生活服务</span> | <span>500-2000人</span></p>
+                                <p>
+                                    <el-button type="warning">申请职位</el-button>
+                                </p>
+                            </div>
+                        </div>
+                    </el-card>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

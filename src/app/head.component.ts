@@ -16,9 +16,9 @@ import { Router } from '@angular/router';
         </div>
         <div el-col span="12">
           <div *ngIf="isMenu">
-            <el-menu [model]="router.url" class="el-menu-demo" mode="horizontal">
-              <el-menu-item *ngFor="let item of menuList" [index]="item.url"><a [routerLink]="item.url">{{item.name}}</a></el-menu-item>
-            </el-menu>
+            <ul class="el-menu-demo">
+              <li *ngFor="let item of menuList" class="el-menu-item"><a [routerLink]="item.url" routerLinkActive="active">{{item.name}}</a></li>
+            </ul>
           </div>
         </div>
         <div el-col span="3">
@@ -39,6 +39,23 @@ import { Router } from '@angular/router';
   }
   .el-menu--horizontal .el-menu-item a{
     display:block;
+  }
+  li.el-menu-item{
+    float:left;
+    line-height:80px;
+    height:80px;
+  }
+  .el-menu-item:focus, .el-menu-item:hover{
+    background:none;
+  }
+  .active{
+    color:#20A0FF;
+    border-bottom:3px solid #20A0FF;
+  }
+  li.el-menu-item a{
+    display:block;
+    line-height:77px;
+    padding:0 30px;
   }
   `]
 })
