@@ -300,6 +300,7 @@ ol {
 
 .ali_body {
     width: 100%;
+    min-width:1200px;
     background: #f2f2f4;
     padding: 30px 0;
 }
