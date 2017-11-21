@@ -16,11 +16,11 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { MainComponent } from './main/main.component';
 import { JoinComponent } from './join/join.component';
-import { JoinshowComponent } from './joinshow/joinshow.component';
+import { JoinshowComponent } from './join/joinshow/joinshow.component';
 
 /*服务*/
 import { LoginService } from "./service/login.service";
-import { JoinindexComponent } from './joinindex/joinindex.component';
+import { JoinindexComponent } from './join/joinindex/joinindex.component';
 
 
 const routes: Routes = [

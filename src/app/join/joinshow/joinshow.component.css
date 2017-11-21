@@ -1,0 +1,45 @@
+.jshow_title{
+  font-size: 20px;
+  color:#333;
+  margin-bottom:5px;
+}
+.jshow_title span{
+  font-size: 12px;
+  margin-left:15px;
+}
+.jshow_monmy{
+  font-size: 18px;
+  color:#ff6100;
+}
+.jshow_compony{
+  margin:3px 0;
+}
+.jshow_tips{
+  background: #fff;
+  padding:15px;
+  margin:15px 0;
+}
+.jshow_tlist{
+  color:#333;
+  margin-bottom:10px;
+}
+.jshow_tlist i{
+  color:#ff6100;
+}
+.jtips{
+  display: inline-block;
+  height:30px;
+  margin:0 5px 10px 0;
+}
+h3.jshow_htitle{
+  font-size: 16px;
+  color:#333;
+}
+h3.jshow_htitle i{
+  color:#ff6100;
+}
+.jshow_zwshow{
+  background: #fff;
+  padding:15px;
+  margin:15px 0;
+}
