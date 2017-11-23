@@ -1,0 +1,239 @@
+<div class="ali_body">
+    <div class="ali_bodycont">
+        <div el-row class="ali_serach">
+            <div el-col span="14">
+                <el-input [model]="input" placeholder="请输入内容" [ngStyle]="{'border-radius':'0px'}"></el-input>
+            </div>
+            <div el-col span="4">
+                <el-select [model]="value" placeholder="请选择" (modelChange)="handle($event)">
+                    <el-option *ngFor="let item of cityList" [label]="item.label" [value]="item.value">
+                    </el-option>
+                </el-select>
+            </div>
+            <div el-col span="4">
+                <el-button type="primary" icon="search" (click)="clear()">搜索</el-button>
+            </div>
+        </div>
+        <div el-row class="ali_tips">
+            热门标签：
+            <span>Java</span>
+            <span>PHP</span>
+            <span>C++</span>
+            <span>前端开发</span>
+            <span>IOS</span>
+            <span>安卓</span>
+            <span>运营</span>
+            <span>测试</span>
+        </div>
+
+        <div class="ali_maintab">
+            <el-card class="box-card">
+                <div el-row>
+                    <div el-col span="4">
+                        <div class="ali_li el-icon-menu">技术</div>
+                        <ul class="ali_li-list">
+                            <li><a href="#">Java(2678)</a></li>
+                            <li><a href="#">PHP(678678)</a></li>
+                            <li><a href="#">C++(65765)</a></li>
+                            <li><a href="#">安卓(89798)</a></li>
+                            <li><a href="#">算法(678)</a></li>
+                            <li> <a href="#">人工智能(2456)</a></li>
+                        </ul>
+                    </div>
+                    <div el-col span="4">
+                        <div class="ali_li el-icon-menu">产品</div>
+                        <ul class="ali_li-list">
+                            <li><a href="#">Java(2678)</a></li>
+                            <li><a href="#">PHP(678678)</a></li>
+                            <li><a href="#">C++(65765)</a></li>
+                            <li><a href="#">安卓(89798)</a></li>
+                            <li><a href="#">算法(678)</a></li>
+                            <li> <a href="#">人工智能(2456)</a></li>
+                        </ul>
+                    </div>
+                    <div el-col span="4">
+                        <div class="ali_li el-icon-menu">设计</div>
+                        <ul class="ali_li-list">
+                            <li><a href="#">Java(2678)</a></li>
+                            <li><a href="#">PHP(678678)</a></li>
+                            <li><a href="#">C++(65765)</a></li>
+                            <li><a href="#">安卓(89798)</a></li>
+                            <li><a href="#">算法(678)</a></li>
+                            <li> <a href="#">人工智能(2456)</a></li>
+                        </ul>
+                    </div>
+                    <div el-col span="4">
+                        <div class="ali_li el-icon-menu">运营</div>
+                        <ul class="ali_li-list">
+                            <li><a href="#">Java(2678)</a></li>
+                            <li><a href="#">PHP(678678)</a></li>
+                            <li><a href="#">C++(65765)</a></li>
+                            <li><a href="#">安卓(89798)</a></li>
+                            <li><a href="#">算法(678)</a></li>
+                            <li> <a href="#">人工智能(2456)</a></li>
+                        </ul>
+                    </div>
+                    <div el-col span="4">
+                        <div class="ali_li el-icon-menu">市场与销售</div>
+                        <ul class="ali_li-list">
+                            <li><a href="#">Java(2678)</a></li>
+                            <li><a href="#">PHP(678678)</a></li>
+                            <li><a href="#">C++(65765)</a></li>
+                            <li><a href="#">安卓(89798)</a></li>
+                            <li><a href="#">算法(678)</a></li>
+                            <li> <a href="#">人工智能(2456)</a></li>
+                        </ul>
+                    </div>
+                    <div el-col span="4">
+                        <div class="ali_li el-icon-menu">金融</div>
+                        <ul class="ali_li-list">
+                            <li><a href="#">Java(2678)</a></li>
+                            <li><a href="#">PHP(678678)</a></li>
+                            <li><a href="#">C++(65765)</a></li>
+                            <li><a href="#">安卓(89798)</a></li>
+                            <li><a href="#">算法(678)</a></li>
+                            <li> <a href="#">人工智能(2456)</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </el-card>
+        </div>
+
+        <div class="ali_list">
+            <el-card class="box-card">
+                <div el-row class="ali_card-list">
+                    <div el-col span="18">
+                        <p class="ali_zwname">网站建设</p>
+                        <p class="ali_zwmoney">20K-40K</p>
+                        <ul class="ali_text_list">
+                            <li>1、中国人，历来每家每户都有一本族谱，记载本族之人变迁，以及家族成员。中国人口老龄化加快，落叶总要归根 </li>
+                            <li>2、族谱这东西，基本上家家都有一本。 如果互联网族谱，能像QQ一样，能做到每个家庭一个帐号，变现分分钟的事。价值10亿美刀，只是时间问题。 </li>
+                            <li>3、马云有商业大数据，夭夭网有家族大数据。记录人类变迁历史，是现代《资治通鉴》 </li>
+                            <li>4、本网站可以造福全国人。 我辈今日不修谱,三代过后子孙谁知你. 家谱是记载家的历史和记载血缘的传承</li>
+                        </ul>
+                    </div>
+                    <div el-col span="6">
+                        <p style="margin-top:120px;text-align:center;">
+                            <el-button type="warning">我要投标</el-button>
+                        </p>
+                    </div>
+                </div>
+            </el-card>
+            <el-card class="box-card">
+                <div el-row class="ali_card-list">
+                    <div el-col span="18">
+                        <p class="ali_zwname">网站建设</p>
+                        <p class="ali_zwmoney">20K-40K</p>
+                        <ul class="ali_text_list">
+                            <li>1、中国人，历来每家每户都有一本族谱，记载本族之人变迁，以及家族成员。中国人口老龄化加快，落叶总要归根 </li>
+                            <li>2、族谱这东西，基本上家家都有一本。 如果互联网族谱，能像QQ一样，能做到每个家庭一个帐号，变现分分钟的事。价值10亿美刀，只是时间问题。 </li>
+                            <li>3、马云有商业大数据，夭夭网有家族大数据。记录人类变迁历史，是现代《资治通鉴》 </li>
+                            <li>4、本网站可以造福全国人。 我辈今日不修谱,三代过后子孙谁知你. 家谱是记载家的历史和记载血缘的传承</li>
+                        </ul>
+                    </div>
+                    <div el-col span="6">
+                        <p style="margin-top:120px;text-align:center;">
+                            <el-button type="warning">我要投标</el-button>
+                        </p>
+                    </div>
+                </div>
+            </el-card>
+            <el-card class="box-card">
+                <div el-row class="ali_card-list">
+                    <div el-col span="18">
+                        <p class="ali_zwname">网站建设</p>
+                        <p class="ali_zwmoney">20K-40K</p>
+                        <ul class="ali_text_list">
+                            <li>1、中国人，历来每家每户都有一本族谱，记载本族之人变迁，以及家族成员。中国人口老龄化加快，落叶总要归根 </li>
+                            <li>2、族谱这东西，基本上家家都有一本。 如果互联网族谱，能像QQ一样，能做到每个家庭一个帐号，变现分分钟的事。价值10亿美刀，只是时间问题。 </li>
+                            <li>3、马云有商业大数据，夭夭网有家族大数据。记录人类变迁历史，是现代《资治通鉴》 </li>
+                            <li>4、本网站可以造福全国人。 我辈今日不修谱,三代过后子孙谁知你. 家谱是记载家的历史和记载血缘的传承</li>
+                        </ul>
+                    </div>
+                    <div el-col span="6">
+                        <p style="margin-top:120px;text-align:center;">
+                            <el-button type="warning">我要投标</el-button>
+                        </p>
+                    </div>
+                </div>
+            </el-card>
+            <el-card class="box-card">
+                <div el-row class="ali_card-list">
+                    <div el-col span="18">
+                        <p class="ali_zwname">网站建设</p>
+                        <p class="ali_zwmoney">20K-40K</p>
+                        <ul class="ali_text_list">
+                            <li>1、中国人，历来每家每户都有一本族谱，记载本族之人变迁，以及家族成员。中国人口老龄化加快，落叶总要归根 </li>
+                            <li>2、族谱这东西，基本上家家都有一本。 如果互联网族谱，能像QQ一样，能做到每个家庭一个帐号，变现分分钟的事。价值10亿美刀，只是时间问题。 </li>
+                            <li>3、马云有商业大数据，夭夭网有家族大数据。记录人类变迁历史，是现代《资治通鉴》 </li>
+                            <li>4、本网站可以造福全国人。 我辈今日不修谱,三代过后子孙谁知你. 家谱是记载家的历史和记载血缘的传承</li>
+                        </ul>
+                    </div>
+                    <div el-col span="6">
+                        <p style="margin-top:120px;text-align:center;">
+                            <el-button type="warning">我要投标</el-button>
+                        </p>
+                    </div>
+                </div>
+            </el-card>
+            <el-card class="box-card">
+                <div el-row class="ali_card-list">
+                    <div el-col span="18">
+                        <p class="ali_zwname">网站建设</p>
+                        <p class="ali_zwmoney">20K-40K</p>
+                        <ul class="ali_text_list">
+                            <li>1、中国人，历来每家每户都有一本族谱，记载本族之人变迁，以及家族成员。中国人口老龄化加快，落叶总要归根 </li>
+                            <li>2、族谱这东西，基本上家家都有一本。 如果互联网族谱，能像QQ一样，能做到每个家庭一个帐号，变现分分钟的事。价值10亿美刀，只是时间问题。 </li>
+                            <li>3、马云有商业大数据，夭夭网有家族大数据。记录人类变迁历史，是现代《资治通鉴》 </li>
+                            <li>4、本网站可以造福全国人。 我辈今日不修谱,三代过后子孙谁知你. 家谱是记载家的历史和记载血缘的传承</li>
+                        </ul>
+                    </div>
+                    <div el-col span="6">
+                        <p style="margin-top:120px;text-align:center;">
+                            <el-button type="warning">我要投标</el-button>
+                        </p>
+                    </div>
+                </div>
+            </el-card>
+            <el-card class="box-card">
+                <div el-row class="ali_card-list">
+                    <div el-col span="18">
+                        <p class="ali_zwname">网站建设</p>
+                        <p class="ali_zwmoney">20K-40K</p>
+                        <ul class="ali_text_list">
+                            <li>1、中国人，历来每家每户都有一本族谱，记载本族之人变迁，以及家族成员。中国人口老龄化加快，落叶总要归根 </li>
+                            <li>2、族谱这东西，基本上家家都有一本。 如果互联网族谱，能像QQ一样，能做到每个家庭一个帐号，变现分分钟的事。价值10亿美刀，只是时间问题。 </li>
+                            <li>3、马云有商业大数据，夭夭网有家族大数据。记录人类变迁历史，是现代《资治通鉴》 </li>
+                            <li>4、本网站可以造福全国人。 我辈今日不修谱,三代过后子孙谁知你. 家谱是记载家的历史和记载血缘的传承</li>
+                        </ul>
+                    </div>
+                    <div el-col span="6">
+                        <p style="margin-top:120px;text-align:center;">
+                            <el-button type="warning">我要投标</el-button>
+                        </p>
+                    </div>
+                </div>
+            </el-card>
+            <el-card class="box-card">
+                <div el-row class="ali_card-list">
+                    <div el-col span="18">
+                        <p class="ali_zwname">网站建设</p>
+                        <p class="ali_zwmoney">20K-40K</p>
+                        <ul class="ali_text_list">
+                            <li>1、中国人，历来每家每户都有一本族谱，记载本族之人变迁，以及家族成员。中国人口老龄化加快，落叶总要归根 </li>
+                            <li>2、族谱这东西，基本上家家都有一本。 如果互联网族谱，能像QQ一样，能做到每个家庭一个帐号，变现分分钟的事。价值10亿美刀，只是时间问题。 </li>
+                            <li>3、马云有商业大数据，夭夭网有家族大数据。记录人类变迁历史，是现代《资治通鉴》 </li>
+                            <li>4、本网站可以造福全国人。 我辈今日不修谱,三代过后子孙谁知你. 家谱是记载家的历史和记载血缘的传承</li>
+                        </ul>
+                    </div>
+                    <div el-col span="6">
+                        <p style="margin-top:120px;text-align:center;">
+                            <el-button type="warning">我要投标</el-button>
+                        </p>
+                    </div>
+                </div>
+            </el-card>
+        </div>
+
+    </div>
+</div>

@@ -79,8 +79,9 @@ export class HeadComponent implements OnInit {
   ngOnInit() {
     this.menuList = [
       {name: '首 页', url: '/main'},
-      {name: '招 聘', url: '/join'},
-      {name: '项 目', url: '/object'},
+      {name: '求 职', url: '/join'},
+      {name: '招 聘', url: '/job'},
+      {name: '项 目', url: '/project'},
       {name: '培 训', url: '/train'}
     ];
     let scope = this;
