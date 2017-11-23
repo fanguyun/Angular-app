@@ -361,7 +361,50 @@ ol {
 .ali_join_right {
     padding-left: 20px;
 }
-
+.get_zwbtn{
+  width:100%;
+  background: #ff6100;
+  border:1px solid #ff6100;
+  color:#fff;
+}
+.get_zwbtn:hover{
+  background: #ef5d03;
+  border:1px solid #ef5d03;
+  color:#fff;
+}
+.js_list_ha{
+  font-size: 14px;
+  color:#20A0FF;
+  margin:10px 0;
+}
+.js_list_ha a{
+  color:#20A0FF;
+}
+.join_tjlist{
+  background: #fff;
+  padding:15px;
+}
+.join_tjtitle{
+  font-size: 14px;
+  color:#333;
+  border-bottom:1px solid #efefef;
+  line-height: 35px;
+}
+.join_tjlieb{
+  border-bottom:1px dotted #efefef;
+  padding:10px 0;
+}
+.join_tjlieb .zw_name{
+  color:#333;
+  font-size: 14px;
+}
+.join_tjlieb .zw_monmy{
+  color:#ff6100;
+  text-align: right;
+}
+.join_tjlieb .zw_add{
+  text-align: right;
+}
 
 /*foot*/
 
