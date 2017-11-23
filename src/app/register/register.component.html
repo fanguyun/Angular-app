@@ -27,6 +27,18 @@
             </div>
         </div>
         <div el-row>
+            <div el-col span="24" class="ali_from">
+              <el-select [(model)]="value" placeholder="请选择" style="font-size:12px;">
+              <el-option *ngFor="let item of [{value: '1',label: '个人用户' },{ value: '2', label: '企业用户' }]"
+                [label]="item.label"
+                [disabled]="item.disabled"
+                [value]="item.value" style="font-size:12px;">
+              </el-option>
+              </el-select>
+              <i class="icon iconfont icon-lock"></i>
+            </div>
+        </div>
+        <div el-row>
             <div el-col span="15" class="ali_from">
                 <input type="text" #checkCode placeholder="验证码" auto-complete="off" class="el-input__inner" />
                 <i class="icon iconfont icon-mobilephone"></i>

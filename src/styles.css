@@ -219,6 +219,7 @@ ol {
 
 .ali_from {
     position: relative;
+    font-size: 12px;
 }
 
 .ali_from .el-input__inner {
