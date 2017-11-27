@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ElModule } from 'element-angular'
+import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
@@ -21,7 +22,6 @@ import { JoinshowComponent } from './join/joinshow/joinshow.component';
 /*服务*/
 import { LoginService } from "./service/login.service";
 import { JoinindexComponent } from './join/joinindex/joinindex.component';
-import { ProjecthomeComponent } from './projecthome/projecthome.component';
 import { ProjecComponent } from './projec/projec.component';
 import { TrainComponent } from './train/train.component';
 import { JobComponent } from './job/job.component';
@@ -56,7 +56,6 @@ const routes: Routes = [
     JoinComponent,
     JoinshowComponent,
     JoinindexComponent,
-    ProjecthomeComponent,
     ProjecComponent,
     TrainComponent,
     JobComponent
@@ -69,7 +68,8 @@ const routes: Routes = [
     RouterModule.forRoot(routes)
   ],
   providers: [
-    LoginService
+    LoginService,
+    { provide: LocationStrategy, useClass: HashLocationStrategy }
   ],
   bootstrap: [AppComponent]
 })

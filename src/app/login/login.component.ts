@@ -42,7 +42,7 @@ export class LoginComponent implements OnInit {
           console.log(Md5.hashStr(passWord));
           this.message['success']('登陆成功！');
           localStorage.setItem('meunInfo', 'yes');
-          window.location.href = '/main';
+          window.location.href = '#/main';
           // this.router.navigate(['/main']);
         }
       }

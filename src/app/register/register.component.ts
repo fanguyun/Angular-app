@@ -13,6 +13,7 @@ export class RegisterComponent implements OnInit {
   passwordReg: RegExp;
   isSend: boolean;
   isCheck: boolean;
+  valueType: number;
   timer: number;
   sendText: string;
   constructor(
@@ -78,4 +79,3 @@ export class RegisterComponent implements OnInit {
   }
 
 }
-

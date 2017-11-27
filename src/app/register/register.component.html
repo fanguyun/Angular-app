@@ -28,7 +28,7 @@
         </div>
         <div el-row>
             <div el-col span="24" class="ali_from">
-              <el-select [(model)]="value" placeholder="请选择" style="font-size:12px;">
+              <el-select [(model)]="valueType" placeholder="请选择" style="font-size:12px;">
               <el-option *ngFor="let item of [{value: '1',label: '个人用户' },{ value: '2', label: '企业用户' }]"
                 [label]="item.label"
                 [disabled]="item.disabled"
