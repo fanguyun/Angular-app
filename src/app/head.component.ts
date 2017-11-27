@@ -67,14 +67,6 @@ export class HeadComponent implements OnInit {
   constructor(
     private router: Router
   ) {
-    let scope = this;
-    setTimeout(function(){
-      if (scope.router.url === '/login' || scope.router.url === '/register') {
-        scope.isMenu = false;
-      } else {
-        scope.isMenu = true;
-      }
-    }, 600);
   }
   ngOnInit() {
     this.menuList = [
@@ -84,14 +76,14 @@ export class HeadComponent implements OnInit {
       {name: '项 目', url: '/project'},
       {name: '培 训', url: '/train'}
     ];
-    let scope = this;
-    setTimeout(function(){
-      if (scope.router.url === '/login' || scope.router.url === '/register') {
-        scope.isMenu = false;
-      } else {
-        scope.isMenu = true;
-      }
-    }, 100);
+  }
+  ngDoCheck() {
+    console.log('ngDoCheck');
+    if (this.router.url === '/login' || this.router.url === '/register') {
+      this.isMenu = false;
+    } else {
+      this.isMenu = true;
+    }
   }
   goPage (url: string): void {
     window.location.href = url;
