@@ -22,11 +22,14 @@ import { Router } from '@angular/router';
           </div>
         </div>
         <div el-col span="3">
-        <p class="user_seting" *ngIf="!isMenu">
-          <a (click)="goPage('#/main')">返回首页</a>
-        </p>
-          <p class="user_seting" *ngIf="isMenu">
+          <p class="user_seting" *ngIf="!isMenu && !isLogin">
+            <a (click)="goPage('#/main')">返回首页</a>
+          </p>
+          <p class="user_seting" *ngIf="isMenu && !isLogin">
             <a (click)="goPage('#/register')">注 册</a> | <a (click)="goPage('#/login')">登 录</a>
+          </p>
+          <p class="user_seting" *ngIf="isLogin && isMenu">
+            <a (click)="goPage('#/register')">13066806802</a> | <a (click)="goLoginOut()">退出</a>
           </p>
         </div>
       </div>
@@ -63,6 +66,7 @@ import { Router } from '@angular/router';
 export class HeadComponent implements OnInit {
   title = '处理中心';
   isMenu: boolean;
+  isLogin: boolean;
   menuList: Array<{name: string, url: string}>;
   constructor(
     private router: Router
@@ -84,8 +88,16 @@ export class HeadComponent implements OnInit {
     } else {
       this.isMenu = true;
     }
+    if (localStorage.getItem('meunInfo') === 'yes') {
+      this.isLogin = true
+    }
   }
   goPage (url: string): void {
     window.location.href = url;
+  }
+  goLoginOut (): void {
+    localStorage.setItem('meunInfo', 'no');
+    this.isLogin = false;
+    window.location.href = '#/login';
   }
 }
