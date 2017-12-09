@@ -15,9 +15,19 @@ import { Router } from '@angular/router';
           </div>
         </div>
         <div el-col span="12">
-          <div *ngIf="isMenu">
+          <div *ngIf="isMenu && !isPerson && !isOrg">
             <ul class="el-menu-demo">
               <li *ngFor="let item of menuList" class="el-menu-item"><a [routerLink]="item.url" routerLinkActive="active">{{item.name}}</a></li>
+            </ul>
+          </div>
+          <div *ngIf="isPerson && isMenu && !isOrg">
+            <ul class="el-menu-demo">
+              <li *ngFor="let item of personMenu" class="el-menu-item"><a [routerLink]="item.url" routerLinkActive="active">{{item.name}}</a></li>
+            </ul>
+          </div>
+          <div *ngIf="isOrg && isMenu && !isPerson">
+            <ul class="el-menu-demo">
+              <li *ngFor="let item of orgMenu" class="el-menu-item"><a [routerLink]="item.url" routerLinkActive="active">{{item.name}}</a></li>
             </ul>
           </div>
         </div>
@@ -29,7 +39,7 @@ import { Router } from '@angular/router';
             <a (click)="goPage('#/register')">注 册</a> | <a (click)="goPage('#/login')">登 录</a>
           </p>
           <p class="user_seting" *ngIf="isLogin && isMenu">
-            <a (click)="goPage('#/register')">13066806802</a> | <a (click)="goLoginOut()">退出</a>
+            <a (click)="goPage('#/phome')">13066806802</a> | <a (click)="goLoginOut()">退出</a>
           </p>
         </div>
       </div>
@@ -67,7 +77,11 @@ export class HeadComponent implements OnInit {
   title = '处理中心';
   isMenu: boolean;
   isLogin: boolean;
+  isPerson: boolean;
+  isOrg: boolean;
   menuList: Array<{name: string, url: string}>;
+  personMenu: Array<{name: string, url: string}>;
+  orgMenu: Array<{name: string, url: string}>;
   constructor(
     private router: Router
   ) {
@@ -80,6 +94,18 @@ export class HeadComponent implements OnInit {
       {name: '项 目', url: '/project'},
       {name: '培 训', url: '/train'}
     ];
+    this.personMenu = [
+      {name: '首 页', url: '/main'},
+      {name: '我的雄才', url: '/phome'},
+      {name: '我的申请', url: '/psend'},
+      {name: '简历管理', url: '/presume'}
+    ];
+    this.orgMenu = [
+      {name: '首 页', url: '/main'},
+      {name: '企业管理', url: '/ohome'},
+      {name: '应聘管理', url: '/osend'},
+      {name: '职位管理', url: '/oresume'}
+    ];
   }
   ngDoCheck() {
     console.log('ngDoCheck');
@@ -87,6 +113,16 @@ export class HeadComponent implements OnInit {
       this.isMenu = false;
     } else {
       this.isMenu = true;
+    }
+    if (this.router.url === '/phome' || this.router.url === '/psend' || this.router.url === '/presume') {
+      this.isPerson = true
+    } else {
+      this.isPerson = false
+    }
+    if (this.router.url === '/ohome' || this.router.url === '/osend' || this.router.url === '/oresume') {
+      this.isOrg = true
+    } else {
+      this.isOrg = false
     }
     if (localStorage.getItem('meunInfo') === 'yes') {
       this.isLogin = true

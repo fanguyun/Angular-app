@@ -25,6 +25,12 @@ import { JoinindexComponent } from './join/joinindex/joinindex.component';
 import { ProjecComponent } from './projec/projec.component';
 import { TrainComponent } from './train/train.component';
 import { JobComponent } from './job/job.component';
+import { PhomeComponent } from './person/phome/phome.component';
+import { PsendComponent } from './person/psend/psend.component';
+import { PresumeComponent } from './person/presume/presume.component';
+import { OhomeComponent } from './org/ohome/ohome.component';
+import { OsendComponent } from './org/osend/osend.component';
+import { OresumeComponent } from './org/oresume/oresume.component';
 
 
 const routes: Routes = [
@@ -42,7 +48,12 @@ const routes: Routes = [
   },
   {path: 'project', component: ProjecComponent},
   {path: 'train', component: TrainComponent},
-
+  {path: 'phome', component: PhomeComponent},
+  {path: 'psend', component: PsendComponent},
+  {path: 'presume', component: PresumeComponent},
+  {path: 'ohome', component: OhomeComponent},
+  {path: 'osend', component: OsendComponent},
+  {path: 'oresume', component: OresumeComponent}
 ];
 
 @NgModule({
@@ -58,7 +69,13 @@ const routes: Routes = [
     JoinindexComponent,
     ProjecComponent,
     TrainComponent,
-    JobComponent
+    JobComponent,
+    PhomeComponent,
+    PsendComponent,
+    PresumeComponent,
+    OhomeComponent,
+    OsendComponent,
+    OresumeComponent
   ],
   imports: [
     BrowserModule,
