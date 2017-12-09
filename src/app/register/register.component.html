@@ -1,5 +1,5 @@
 <div class="ali_login_cont">
-    <div class="ali_er_form">
+    <div class="ali_er_form mar_botm20">
         <div el-row>
             <div el-col span="10">
                 <span style="font-size:18px;font-weight:bold;">账号注册</span>
@@ -26,19 +26,7 @@
                 <i class="icon iconfont icon-lock"></i>
             </div>
         </div>
-        <div el-row>
-            <div el-col span="24" class="ali_from">
-              <el-select [(model)]="valueType" placeholder="请选择" style="font-size:12px;">
-              <el-option *ngFor="let item of [{value: '1',label: '个人用户' },{ value: '2', label: '企业用户' }]"
-                [label]="item.label"
-                [disabled]="item.disabled"
-                [value]="item.value" style="font-size:12px;">
-              </el-option>
-              </el-select>
-              <i class="icon iconfont icon-lock"></i>
-            </div>
-        </div>
-        <div el-row>
+        <div el-row class="no_mar-btomom">
             <div el-col span="15" class="ali_from">
                 <input type="text" #checkCode placeholder="验证码" auto-complete="off" class="el-input__inner" />
                 <i class="icon iconfont icon-mobilephone"></i>
@@ -47,7 +35,15 @@
                 <el-button style="color:#999;width:102px;" (click)="sendCode(userName.value)" [disabled]="isSend">{{sendText}}</el-button>
             </div>
         </div>
-        <div el-row class="no_marginbottom">
+        <div el-row class="no-margin">
+            <div el-col span="24" class="ali_from">
+              <el-radio-group [model]="'1'">
+                <el-radio label="1">个人用户</el-radio>
+                <el-radio label="2">企业用户</el-radio>
+              </el-radio-group>
+            </div>
+        </div>
+        <div el-row class="no_marginbottom no_margin-top">
             <div el-col span="24">
                 <el-button type="primary" style="width:100%;" (click)="resigterSubmit(userName.value, passWord.value, compassWord.value, checkCode.value)" [disabled]="!isCheck">注 册</el-button>
             </div>

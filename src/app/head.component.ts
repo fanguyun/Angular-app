@@ -23,10 +23,10 @@ import { Router } from '@angular/router';
         </div>
         <div el-col span="3">
         <p class="user_seting" *ngIf="!isMenu">
-          <a (click)="goPage('/main')">返回首页</a>
+          <a (click)="goPage('#/main')">返回首页</a>
         </p>
           <p class="user_seting" *ngIf="isMenu">
-            <a (click)="goPage('/register')">注 册</a> | <a (click)="goPage('/login')">登 录</a>
+            <a (click)="goPage('#/register')">注 册</a> | <a (click)="goPage('#/login')">登 录</a>
           </p>
         </div>
       </div>
