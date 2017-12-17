@@ -1,3 +1,64 @@
-<p>
-  phome works!
-</p>
+<div class="pmain">
+  <div el-row class="p_m_show">
+    <div el-col span="9" class="p_l_show">
+      <h3>王可可<span>男</span><span>30岁</span><a href="#" class="p_edit_btn"><i class="el-icon-edit"></i></a></h3>
+      <p class="p_jobl">6年工作经验 | 深圳</p>
+      <p class="p_phone">手机号码：130668056680</p>
+      <p class="p_eamil">联系邮箱：wangkeke@gmail.com</p>
+      <div class="p_listbtn">
+        <el-button type="primary">申请记录</el-button>
+      </div>
+    </div>
+    <div el-col span="15" class="p_r_show">
+      <div el-row>
+        <div el-col span="6">
+          <h3>我的简历</h3>
+          <p><img src="../assets/images/person.jpeg" alt="xxx" width="120" height="170"></p>
+        </div>
+        <div el-col span="18" class="p_r_job_list">
+          <p class="p_ei_btn"><a href="#">导出简历</a>/<a href="#">删除简历</a></p>
+          <p class="p_job_tips">中文简历</p>
+          <p class="p_job_tips"><span>前端开发工程师</span><span>4年</span><span>深圳</span></p>
+          <p class="p_sys_btn">
+            <el-button type="text">刷 新</el-button>
+            <el-button type="text">修 改</el-button>
+            <el-button type="text">预 览</el-button>
+            <el-button type="text">委 托</el-button>
+            <el-button type="text">企业屏蔽</el-button>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--推荐职位-->
+  <el-card class="box-card p_card_l">
+    <ng-template #header>
+      <div class="clearfix">
+        <span class="p_title">推荐职位</span>
+      </div>
+    </ng-template>
+    <div>
+      <el-table [model]="tableData" [stripe]="true" center="all">
+        <el-table-column model-key="name" label="职位" width="140">
+        </el-table-column>
+        <el-table-column model-key="sex" label="性别" width="60">
+        </el-table-column>
+        <el-table-column model-key="compony" label="公司名称" width="140">
+        </el-table-column>
+        <el-table-column model-key="joblist" label="职位要求" width="260">
+        </el-table-column>
+        <el-table-column model-key="money" label="薪酬" width="60">
+        </el-table-column>
+        <el-table-column model-key="address" label="工作地点" width="120">
+        </el-table-column>
+        <el-table-column model-key="time" label="发布时间" width="90">
+        </el-table-column>
+         <el-table-column label="操作" width="120">
+          <ng-template #slot let-scope="scope">
+            <el-button type="text" size="small">申请职位</el-button>
+          </ng-template>
+        </el-table-column>
+      </el-table>
+    </div>
+  </el-card>
+</div>
