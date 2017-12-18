@@ -1,3 +1,33 @@
-<p>
-  psend works!
-</p>
+<div class="pmain">
+  <!--推荐职位-->
+  <el-card class="box-card p_card_l">
+    <ng-template #header>
+      <div class="clearfix">
+        <span class="p_title">申请记录</span>
+      </div>
+    </ng-template>
+    <div>
+      <el-table [model]="tableData" [stripe]="true" center="all">
+        <el-table-column model-key="name" label="职位" width="160">
+        </el-table-column>
+        <el-table-column model-key="sex" label="性别" width="60">
+        </el-table-column>
+        <el-table-column model-key="compony" label="公司名称" width="160">
+        </el-table-column>
+        <el-table-column model-key="money" label="薪酬" width="60">
+        </el-table-column>
+        <el-table-column model-key="address" label="工作地点" width="200">
+        </el-table-column>
+        <el-table-column model-key="time" label="发布时间" width="90">
+        </el-table-column>
+        <el-table-column model-key="state" label="职位状态" width="80">
+        </el-table-column>
+         <el-table-column label="操作" width="120">
+          <ng-template #slot let-scope="scope">
+            <el-button type="text" size="small">查看职位</el-button>
+          </ng-template>
+        </el-table-column>
+      </el-table>
+    </div>
+  </el-card>
+</div>
