@@ -1,3 +1,26 @@
-<p>
-  presume works!
-</p>
+<div class="pmain">
+  <!--简历管理-->
+  <div el-row>
+    <div el-col span="5">
+      <el-menu mode="vertical" default-active="1" class="el-menu-vertical-demo">
+        <el-menu-item index="1"><i class="el-icon-menu"></i>个人信息</el-menu-item>
+        <el-menu-item index="2"><i class="el-icon-setting"></i>教育经历</el-menu-item>
+        <el-menu-item index="3"><i class="el-icon-message"></i>工作经历</el-menu-item>
+        <el-menu-item index="4"><i class="el-icon-document"></i>求职意向</el-menu-item>
+      </el-menu>
+    </div>
+    <div el-col span="19">
+      <div class="p_r_flist">
+        <el-card class="box-card">
+          <ng-template #header>
+            <div class="clearfix">
+              <span class="p_r_title">个人信息</span>
+              <el-button style="float: right;" type="text">修改</el-button>
+            </div>
+          </ng-template>
+          <div>个人信息</div>
+        </el-card>
+      </div>
+    </div>
+  </div>
+</div>

@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./psend.component.css']
 })
 export class PsendComponent implements OnInit {
-  private tableData: any[] =  new Array(20).fill({
+  tableData: any[] =  new Array(20).fill({
     name: '用户研究',
     sex: '男',
     compony: '腾讯计算机有限公司',
