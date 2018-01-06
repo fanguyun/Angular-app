@@ -4,21 +4,87 @@
     <div el-col span="4">
       <ul class="el-menu-vertical-demo">
         <li (click)="handleMaolink('mao0')"><i class="el-icon-document"></i> 企业LOGO</li>
-        <li (click)="handleMaolink('mao1')"><i class="el-icon-menu"></i> 公司简介</li>
+        <li (click)="handleMaolink('mao1')"><i class="el-icon-menu"></i> 企业简介</li>
         <li (click)="handleMaolink('mao2')"><i class="el-icon-setting"></i> 企业规模</li>
         <li (click)="handleMaolink('mao3')"><i class="el-icon-message"></i> 企业性质</li>
         <li (click)="handleMaolink('mao4')"><i class="el-icon-document"></i> 所属行业</li>
         <li (click)="handleMaolink('mao5')"><i class="el-icon-document"></i> 公司地址</li>
-        <li (click)="handleMaolink('mao5')"><i class="el-icon-document"></i> 联系方式</li>
+        <li (click)="handleMaolink('mao6')"><i class="el-icon-document"></i> 联系方式</li>
       </ul>
     </div>
     <div el-col span="20">
       <div class="p_r_flist">
-        <!--企业信息-->
-        <el-card class="box-card" name="mao1" id="mao1">
+        <!--企业Logo-->
+        <el-card class="box-card" name="mao0" id="mao0">
           <ng-template #header>
             <div class="clearfix">
               <span class="p_r_title">企业LOGO</span>
+              <!-- <el-button style="float: right;font-size:12px;font-weight:normal;" type="text">修改</el-button> -->
+            </div>
+          </ng-template>
+          <div class="p_from_list">
+          </div>
+        </el-card>
+        <!--企业简介-->
+        <el-card class="box-card" name="mao1" id="mao1">
+          <ng-template #header>
+            <div class="clearfix">
+              <span class="p_r_title">企业简介</span>
+              <!-- <el-button style="float: right;font-size:12px;font-weight:normal;" type="text">修改</el-button> -->
+            </div>
+          </ng-template>
+          <div class="p_from_list">
+          </div>
+        </el-card>
+        <!--企业规模-->
+        <el-card class="box-card" name="mao2" id="mao2">
+          <ng-template #header>
+            <div class="clearfix">
+              <span class="p_r_title">企业规模</span>
+              <!-- <el-button style="float: right;font-size:12px;font-weight:normal;" type="text">修改</el-button> -->
+            </div>
+          </ng-template>
+          <div class="p_from_list">
+          </div>
+        </el-card>
+        <!--企业性质-->
+        <el-card class="box-card" name="mao3" id="mao3">
+          <ng-template #header>
+            <div class="clearfix">
+              <span class="p_r_title">企业性质</span>
+              <!-- <el-button style="float: right;font-size:12px;font-weight:normal;" type="text">修改</el-button> -->
+            </div>
+          </ng-template>
+          <div class="p_from_list">
+          </div>
+        </el-card>
+        <!--所属行业-->
+        <el-card class="box-card" name="mao4" id="mao4">
+          <ng-template #header>
+            <div class="clearfix">
+              <span class="p_r_title">所属行业</span>
+              <!-- <el-button style="float: right;font-size:12px;font-weight:normal;" type="text">修改</el-button> -->
+            </div>
+          </ng-template>
+          <div class="p_from_list">
+          </div>
+        </el-card>
+        <!--公司地址-->
+        <el-card class="box-card" name="mao5" id="mao5">
+          <ng-template #header>
+            <div class="clearfix">
+              <span class="p_r_title">公司地址</span>
+              <!-- <el-button style="float: right;font-size:12px;font-weight:normal;" type="text">修改</el-button> -->
+            </div>
+          </ng-template>
+          <div class="p_from_list">
+          </div>
+        </el-card>
+        <!--联系方式-->
+        <el-card class="box-card" name="mao6" id="mao6">
+          <ng-template #header>
+            <div class="clearfix">
+              <span class="p_r_title">联系方式</span>
               <!-- <el-button style="float: right;font-size:12px;font-weight:normal;" type="text">修改</el-button> -->
             </div>
           </ng-template>
