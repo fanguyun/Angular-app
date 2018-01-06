@@ -1,3 +1,32 @@
-<p>
-  ohome works!
-</p>
+<div class="pmain">
+  <!-- 企业管理-->
+  <div el-row>
+    <div el-col span="4">
+      <ul class="el-menu-vertical-demo">
+        <li (click)="handleMaolink('mao0')"><i class="el-icon-document"></i> 企业LOGO</li>
+        <li (click)="handleMaolink('mao1')"><i class="el-icon-menu"></i> 公司简介</li>
+        <li (click)="handleMaolink('mao2')"><i class="el-icon-setting"></i> 企业规模</li>
+        <li (click)="handleMaolink('mao3')"><i class="el-icon-message"></i> 企业性质</li>
+        <li (click)="handleMaolink('mao4')"><i class="el-icon-document"></i> 所属行业</li>
+        <li (click)="handleMaolink('mao5')"><i class="el-icon-document"></i> 公司地址</li>
+        <li (click)="handleMaolink('mao5')"><i class="el-icon-document"></i> 联系方式</li>
+      </ul>
+    </div>
+    <div el-col span="20">
+      <div class="p_r_flist">
+        <!--企业信息-->
+        <el-card class="box-card" name="mao1" id="mao1">
+          <ng-template #header>
+            <div class="clearfix">
+              <span class="p_r_title">企业LOGO</span>
+              <!-- <el-button style="float: right;font-size:12px;font-weight:normal;" type="text">修改</el-button> -->
+            </div>
+          </ng-template>
+          <div class="p_from_list">
+          </div>
+        </el-card>
+
+      </div>
+    </div>
+  </div>
+</div>
