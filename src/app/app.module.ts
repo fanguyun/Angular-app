@@ -4,7 +4,9 @@ import { ElModule } from 'element-angular'
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import 'rxjs/add/operator/map';
 
 import 'element-angular/theme/index.css'
@@ -81,6 +83,8 @@ const routes: Routes = [
     BrowserModule,
     FormsModule,
     HttpModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
     ElModule.forRoot(),
     RouterModule.forRoot(routes)
   ],

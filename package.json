@@ -22,7 +22,7 @@
     "@angular/platform-browser-dynamic": "^4.2.4",
     "@angular/router": "^4.2.4",
     "core-js": "^2.4.1",
-    "element-angular": "^0.4.5",
+    "element-angular": "^0.5.0-beta.2",
     "rxjs": "^5.4.2",
     "ts-md5": "^1.2.2",
     "zone.js": "^0.8.14"

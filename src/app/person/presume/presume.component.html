@@ -1,24 +1,167 @@
 <div class="pmain">
   <!--简历管理-->
   <div el-row>
-    <div el-col span="5">
-      <el-menu mode="vertical" default-active="1" class="el-menu-vertical-demo">
-        <el-menu-item index="1"><i class="el-icon-menu"></i>个人信息</el-menu-item>
-        <el-menu-item index="2"><i class="el-icon-setting"></i>教育经历</el-menu-item>
-        <el-menu-item index="3"><i class="el-icon-message"></i>工作经历</el-menu-item>
-        <el-menu-item index="4"><i class="el-icon-document"></i>求职意向</el-menu-item>
-      </el-menu>
+    <div el-col span="4">
+      <ul class="el-menu-vertical-demo">
+        <li (click)="handleMaolink('mao1')"><i class="el-icon-menu"></i> 个人信息</li>
+        <li (click)="handleMaolink('mao2')"><i class="el-icon-setting"></i> 教育经历</li>
+        <li (click)="handleMaolink('mao3')"><i class="el-icon-message"></i> 工作经历</li>
+        <li (click)="handleMaolink('mao4')"><i class="el-icon-document"></i> 求职意向</li>
+      </ul>
     </div>
-    <div el-col span="19">
+    <div el-col span="20">
       <div class="p_r_flist">
-        <el-card class="box-card">
+        <!--个人信息-->
+        <el-card class="box-card" name="mao1" id="mao1">
           <ng-template #header>
             <div class="clearfix">
               <span class="p_r_title">个人信息</span>
-              <el-button style="float: right;" type="text">修改</el-button>
+              <!-- <el-button style="float: right;font-size:12px;font-weight:normal;" type="text">修改</el-button> -->
             </div>
           </ng-template>
-          <div>个人信息</div>
+          <div class="p_from_list">
+            <el-form [formGroup]="validateForm" label-width="100px" size="small" [show-icon]="true" [show-message]="true" el-class="form-list">
+
+              <el-form-item label="姓 名：" [required]="true" [status]="statusCtrl('name')" [error]="messageCtrl('name')" [style.width]="'80%'">
+                <el-input formControlName="name"></el-input>
+              </el-form-item>
+
+              <el-form-item label="性 别：">
+                <el-radio-group formControlName="sex">
+                  <el-radio label="man">男</el-radio>
+                  <el-radio label="woman">女</el-radio>
+                </el-radio-group>
+              </el-form-item>
+
+              <el-form-item label="手机：">
+                <el-input formControlName="phone"></el-input>
+              </el-form-item>
+
+              <el-form-item label="邮箱：">
+                <el-input formControlName="email"></el-input>
+              </el-form-item>
+
+              <el-form-item label="现居住地：">
+                <el-input formControlName="address"></el-input>
+              </el-form-item>
+
+              <el-form-item label="出生日期：" [status]="statusCtrl('time')" [error]="messageCtrl('time')">
+                <el-date-picker formControlName="time"></el-date-picker>
+              </el-form-item>
+
+
+              <el-form-item>
+                <el-button type="primary" (click)="submit()">保 存</el-button>
+              </el-form-item>
+            </el-form>
+          </div>
+        </el-card>
+        <!--教育信息-->
+        <el-card class="box-card" name="mao2" id="mao2">
+          <ng-template #header>
+            <div class="clearfix">
+              <span class="p_r_title">教育经历</span>
+            </div>
+          </ng-template>
+          <div class="p_from_list">
+            <el-form [formGroup]="validateForm2" label-width="100px"
+              [show-icon]="true" [show-message]="true" el-class="form-demo">
+
+              <el-form-item label="学校名称：">
+                <el-input formControlName="schoolName"></el-input>
+              </el-form-item>
+
+              <el-form-item label="时间段：">
+                <el-input formControlName="times"></el-input>
+              </el-form-item>
+
+              <el-form-item label="专业名称：">
+                <el-input formControlName="majorName"></el-input>
+              </el-form-item>
+
+              <el-form-item label="学历：">
+                <el-input formControlName="education"></el-input>
+              </el-form-item>
+
+              <el-form-item label="在校经历：">
+                <el-input formControlName="remark" type="textarea" [rows]="5" placeholder="请输入内容"></el-input>
+              </el-form-item>
+
+              <el-form-item>
+                <el-button type="primary" (click)="submit2()">保 存</el-button>
+              </el-form-item>
+              </el-form>
+          </div>
+        </el-card>
+        <!--工作经历-->
+        <el-card class="box-card" name="mao3" id="mao3">
+          <ng-template #header>
+            <div class="clearfix">
+              <span class="p_r_title">工作经历</span>
+            </div>
+          </ng-template>
+          <div class="p_from_list">
+            <el-form [formGroup]="validateForm3" label-width="100px"
+              [show-icon]="true" [show-message]="true" el-class="form-demo">
+
+              <el-form-item label="公司名称：">
+                <el-input formControlName="comName"></el-input>
+              </el-form-item>
+
+              <el-form-item label="时间段：">
+                <el-input formControlName="times"></el-input>
+              </el-form-item>
+
+              <el-form-item label="职位：">
+                <el-input formControlName="job"></el-input>
+              </el-form-item>
+
+              <el-form-item label="薪水：">
+                <el-input formControlName="money"></el-input>
+              </el-form-item>
+
+              <el-form-item label="工作内容：">
+                <el-input formControlName="remark" type="textarea" [rows]="5" placeholder="请输入内容"></el-input>
+              </el-form-item>
+
+              <el-form-item>
+                <el-button type="primary" (click)="submit3()">保 存</el-button>
+              </el-form-item>
+              </el-form>
+          </div>
+        </el-card>
+        <!--求职意向-->
+        <el-card class="box-card" name="mao4" id="mao4">
+          <ng-template #header>
+            <div class="clearfix">
+              <span class="p_r_title">求职意向</span>
+            </div>
+          </ng-template>
+          <div class="p_from_list">
+            <el-form [formGroup]="validateForm4" label-width="100px"
+              [show-icon]="true" [show-message]="true" el-class="form-demo">
+
+              <el-form-item label="期望薪水：">
+                <el-input formControlName="money"></el-input>
+              </el-form-item>
+
+              <el-form-item label="期望职位：">
+                <el-input formControlName="jobs"></el-input>
+              </el-form-item>
+
+              <el-form-item label="到岗时间：">
+                <el-input formControlName="tims"></el-input>
+              </el-form-item>
+
+              <el-form-item label="期望行业：">
+                <el-input formControlName="org"></el-input>
+              </el-form-item>
+
+              <el-form-item>
+                <el-button type="primary" (click)="submit3()">保 存</el-button>
+              </el-form-item>
+              </el-form>
+          </div>
         </el-card>
       </div>
     </div>

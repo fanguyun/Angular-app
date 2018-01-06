@@ -505,3 +505,12 @@ ul.ali_li-list {
     line-height: 28px;
     color: #333;
 }
+.el-form-item--small .el-form-item__content, .el-form-item--small .el-form-item__label{
+  line-height: 36px;
+}
+.el-menu{
+  border:none;
+}
+.p_from_list .el-input{
+  width:60%;
+}

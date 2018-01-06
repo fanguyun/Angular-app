@@ -8,4 +8,20 @@
 }
 .p_r_flist{
   padding-left:35px;
+  border-left: 1px solid #e6e6e6;
+}
+.p_from_list{
+  padding:30px;
+}
+.el-input{
+  width:80%;
+}
+.el-menu-vertical-demo{
+  font-size: 16px;
+  line-height: 38px;
+  position: fixed;
+}
+.el-menu-vertical-demo li:hover{
+  cursor: pointer;
+  color:#409EFF;
 }
