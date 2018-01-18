@@ -39,7 +39,7 @@ import { Router } from '@angular/router';
             <a (click)="goPage('#/register')">注 册</a> | <a (click)="goPage('#/login')">登 录</a>
           </p>
           <p class="user_seting" *ngIf="isLogin && isMenu">
-            <a (click)="goPage('#/phome')">个人用户</a> | <a (click)="goPage('#/ohome')">企业用户</a> | <a (click)="goLoginOut()">退出</a> | <a (click)="goLoginOut()">退出</a>
+            <a (click)="goPage('#/phome')">个人用户</a> | <a (click)="goPage('#/ohome')">企业用户</a> | <a (click)="goLoginOut()">退出</a>
           </p>
         </div>
       </div>
