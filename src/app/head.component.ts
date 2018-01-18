@@ -120,7 +120,7 @@ export class HeadComponent implements OnInit {
     } else {
       this.isPerson = false
     }
-    if (this.router.url === '/ohome' || this.router.url === '/osend' || this.router.url === '/oresume') {
+    if (this.router.url === '/ohome' || this.router.url === '/osend' || this.router.url === '/oresume' || this.router.url === '/owaibao') {
       this.isOrg = true
     } else {
       this.isOrg = false
