@@ -23,6 +23,19 @@
             </div>
           </ng-template>
           <div class="p_from_list">
+            <div el-row>
+              <div el-col span="24">
+                <el-upload class="avatar-uploader"
+                  action="https://jsonplaceholder.typicode.com/posts/"
+                  [show-file-list]="false"
+                  (success)="successHandle($event)">
+                  <ng-template #trigger>
+                    <img *ngIf="imageUrl" [src]="imageUrl" class="avatar">
+                    <i *ngIf="!imageUrl" class="el-icon-plus avatar-uploader-icon"></i>
+                  </ng-template>
+                </el-upload>
+              </div>
+            </div>
           </div>
         </el-card>
         <!--企业简介-->
@@ -34,6 +47,20 @@
             </div>
           </ng-template>
           <div class="p_from_list">
+            <div el-row>
+              <div el-col span="24">
+                <el-input type="textarea"
+                  [autosize]="{ minRows: 6, maxRows: 20}"
+                  placeholder="请输入企业简介"
+                  [model]="orgText">
+                </el-input>
+              </div>
+            </div>
+            <div el-row>
+              <div el-col span="24">
+                <el-button type="primary" size="small">保 存</el-button>
+              </div>
+            </div>
           </div>
         </el-card>
         <!--企业规模-->
@@ -45,6 +72,20 @@
             </div>
           </ng-template>
           <div class="p_from_list">
+            <div el-row>
+              <div el-col span="24">
+                <el-input type="textarea"
+                  [autosize]="{ minRows: 6, maxRows: 20}"
+                  placeholder="请输入企业规模"
+                  [model]="orgGuimo">
+                </el-input>
+              </div>
+            </div>
+            <div el-row>
+              <div el-col span="24">
+                <el-button type="primary" size="small">保 存</el-button>
+              </div>
+            </div>
           </div>
         </el-card>
         <!--企业性质-->
@@ -56,6 +97,20 @@
             </div>
           </ng-template>
           <div class="p_from_list">
+            <div el-row>
+              <div el-col span="24">
+                <el-input type="textarea"
+                  [autosize]="{ minRows: 6, maxRows: 20}"
+                  placeholder="请输入企业性质"
+                  [model]="orgXinzhi">
+                </el-input>
+              </div>
+            </div>
+            <div el-row>
+              <div el-col span="24">
+                <el-button type="primary" size="small">保 存</el-button>
+              </div>
+            </div>
           </div>
         </el-card>
         <!--所属行业-->
@@ -67,6 +122,20 @@
             </div>
           </ng-template>
           <div class="p_from_list">
+            <div el-row>
+              <div el-col span="24">
+                <el-input type="textarea"
+                  [autosize]="{ minRows: 6, maxRows: 20}"
+                  placeholder="请输入所属行业"
+                  [model]="orgHangye">
+                </el-input>
+              </div>
+            </div>
+            <div el-row>
+              <div el-col span="24">
+                <el-button type="primary" size="small">保 存</el-button>
+              </div>
+            </div>
           </div>
         </el-card>
         <!--公司地址-->
@@ -78,6 +147,20 @@
             </div>
           </ng-template>
           <div class="p_from_list">
+            <div el-row>
+              <div el-col span="24">
+                <el-input type="textarea"
+                  [autosize]="{ minRows: 6, maxRows: 20}"
+                  placeholder="请输入公司地址"
+                  [model]="orgAddres">
+                </el-input>
+              </div>
+            </div>
+            <div el-row>
+              <div el-col span="24">
+                <el-button type="primary" size="small">保 存</el-button>
+              </div>
+            </div>
           </div>
         </el-card>
         <!--联系方式-->
@@ -89,6 +172,20 @@
             </div>
           </ng-template>
           <div class="p_from_list">
+            <div el-row>
+              <div el-col span="24">
+                <el-input type="textarea"
+                  [autosize]="{ minRows: 6, maxRows: 20}"
+                  placeholder="请输入联系方式"
+                  [model]="orgLink">
+                </el-input>
+              </div>
+            </div>
+            <div el-row>
+              <div el-col span="24">
+                <el-button type="primary" size="small">保 存</el-button>
+              </div>
+            </div>
           </div>
         </el-card>
 

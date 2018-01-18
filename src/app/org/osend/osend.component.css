@@ -5,3 +5,26 @@
 .p_title{
   font-size: 16px;
 }
+.pmain{
+  width:1200px;
+  margin:35px auto 60px auto;
+}
+.p_r_title{
+  font-size: 16px;
+  line-height: 36px;
+}
+.p_r_flist{
+  padding-left:35px;
+  border-left: 1px solid #e6e6e6;
+}
+.p_from_list{
+  padding:30px;
+}
+.el-menu-vertical-demo{
+  font-size: 16px;
+  line-height: 38px;
+}
+.el-menu-vertical-demo li:hover{
+  cursor: pointer;
+  color:#409EFF;
+}

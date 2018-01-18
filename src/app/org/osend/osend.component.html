@@ -1,17 +1,49 @@
 <div class="pmain">
-  <!--推荐职位-->
-  <el-card class="box-card p_card_l">
-    <ng-template #header>
-      <div class="clearfix">
-        <span class="p_title">职位管理</span>
-      </div>
-    </ng-template>
-    <div>
-      <div el-row class="search_list">
-        <div el-col span="8"><div class="grid-content bg-purple"></div></div>
-        <div el-col span="8"><div class="grid-content bg-purple-light"></div></div>
-        <div el-col span="8"><div class="grid-content bg-purple"></div></div>
+  <!--职位管理-->
+  <div el-row>
+    <div el-col span="4">
+      <ul class="el-menu-vertical-demo">
+        <li (click)="handleMaolink('mao0')"><i class="el-icon-document"></i> 设计岗位</li>
+        <li (click)="handleMaolink('mao1')"><i class="el-icon-menu"></i> 开发岗位</li>
+        <li (click)="handleMaolink('mao2')"><i class="el-icon-setting"></i> 管理岗位</li>
+        <li (click)="handleMaolink('mao3')"><i class="el-icon-message"></i> 运营岗位</li>
+        <li (click)="handleMaolink('mao4')"><i class="el-icon-document"></i> 新媒体岗位</li>
+        <li (click)="handleMaolink('mao5')"><i class="el-icon-document"></i> 财务岗位</li>
+        <li (click)="handleMaolink('mao6')"><i class="el-icon-document"></i> 其他</li>
+      </ul>
+    </div>
+    <div el-col span="20">
+      <div class="p_r_flist">
+        <el-card class="box-card" name="mao0" id="mao0">
+          <ng-template #header>
+            <div class="clearfix">
+              <span class="p_r_title">开发岗位</span>
+              <!-- <el-button style="float: right;font-size:12px;font-weight:normal;" type="text">修改</el-button> -->
+            </div>
+          </ng-template>
+          <div class="p_from_list">
+            <el-table [model]="tableData" [stripe]="true">
+              <el-table-column model-key="name" label="职位" width="160">
+              </el-table-column>
+              <el-table-column model-key="date" label="发布日期" width="120">
+              </el-table-column>
+              <el-table-column model-key="num" label="招聘人数" width="100">
+              </el-table-column>
+              <el-table-column model-key="money" label="薪资" width="100">
+              </el-table-column>
+              <el-table-column model-key="yoer" label="工作年限" width="100">
+              </el-table-column>
+              <el-table-column model-key="education" label="学历要求" width="120">
+              </el-table-column>
+              <el-table-column label="操作">
+                <ng-template #slot let-scope="scope">
+                  <el-button type="text" size="small">编辑</el-button>
+                </ng-template>
+              </el-table-column>
+            </el-table>
+          </div>
+        </el-card>
       </div>
     </div>
-  </el-card>
+  </div>
 </div>

@@ -25,3 +25,6 @@
   cursor: pointer;
   color:#409EFF;
 }
+.p_from_list .el-row{
+  margin:8px 0;
+}
