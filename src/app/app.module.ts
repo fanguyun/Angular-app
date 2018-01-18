@@ -33,6 +33,7 @@ import { PresumeComponent } from './person/presume/presume.component';
 import { OhomeComponent } from './org/ohome/ohome.component';
 import { OsendComponent } from './org/osend/osend.component';
 import { OresumeComponent } from './org/oresume/oresume.component';
+import { OwaibaoComponent } from './org/owaibao/owaibao.component';
 
 
 const routes: Routes = [
@@ -55,7 +56,8 @@ const routes: Routes = [
   {path: 'presume', component: PresumeComponent},
   {path: 'ohome', component: OhomeComponent},
   {path: 'osend', component: OsendComponent},
-  {path: 'oresume', component: OresumeComponent}
+  {path: 'oresume', component: OresumeComponent},
+  {path: 'owaibao', component: OwaibaoComponent},
 ];
 
 @NgModule({
@@ -77,7 +79,8 @@ const routes: Routes = [
     PresumeComponent,
     OhomeComponent,
     OsendComponent,
-    OresumeComponent
+    OresumeComponent,
+    OwaibaoComponent
   ],
   imports: [
     BrowserModule,
