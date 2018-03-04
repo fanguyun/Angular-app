@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 
-@import "~element-angular/theme/index.css";
-@import "./assets/fonts/iconfont.css";
+@import '~element-angular/theme/index.css';
+@import './assets/fonts/iconfont.css';
 html,
 body,
 div,
@@ -65,8 +65,8 @@ tr,
 th,
 td,
 textarea {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 address,
@@ -75,19 +75,19 @@ dfn,
 em,
 var,
 i {
-    font-style: normal;
+  font-style: normal;
 }
 
 body {
-    font-size: 12px;
-    line-height: 1.5;
-    font-family: 'Microsoft Yahei', 'simsun', 'arial', 'tahoma';
-    color: #333;
+  font-size: 12px;
+  line-height: 1.5;
+  font-family: 'Microsoft Yahei', 'simsun', 'arial', 'tahoma';
+  color: #333;
 }
 
 table {
-    border-collapse: collapse;
-    border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 h1,
@@ -97,422 +97,418 @@ h4,
 h5,
 h6,
 th {
-    font-size: 100%;
-    font-weight: normal;
+  font-size: 100%;
+  font-weight: normal;
 }
 
 button,
 input,
 select,
 textarea {
-    font-size: 100%;
+  font-size: 100%;
 }
 
 fieldset,
 img {
-    border: 0;
+  border: 0;
 }
 
 a {
-    text-decoration: none;
-    color: #666;
-    background: none
+  text-decoration: none;
+  color: #666;
+  background: none;
 }
 
 a:hover {
-    color: #20A0FF;
+  color: #20a0ff;
 }
 
 ul,
 ol {
-    list-style: none;
+  list-style: none;
 }
 
 :focus {
-    outline: none;
+  outline: none;
 }
 
 .clearfix {
-    clear: both;
-    content: "";
-    display: block;
-    overflow: hidden
+  clear: both;
+  content: '';
+  display: block;
+  overflow: hidden;
 }
 
 .clear {
-    clear: both;
+  clear: both;
 }
 
 .fl {
-    float: left;
+  float: left;
 }
 
 .fr {
-    float: right;
+  float: right;
 }
 
 .ds_inline {
-    display: inline-block;
+  display: inline-block;
 }
-
 
 /*head*/
 
 .ali_head {
-    width: 100%;
-    min-width: 1200px;
-    height: 80px;
-    border-bottom: 1px solid #efefef;
-    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .3);
+  width: 100%;
+  min-width: 1200px;
+  height: 80px;
+  border-bottom: 1px solid #efefef;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.3);
 }
-
 
 /*cont*/
 
 .ali_cont {
-    width: 1200px;
-    margin: 0 auto;
+  width: 1200px;
+  margin: 0 auto;
 }
 
 .ali_logo {
-    font-size: 36px;
-    color: #1D8CE0;
-    line-height: 80px;
-    display: inline-block;
+  font-size: 36px;
+  color: #1d8ce0;
+  line-height: 80px;
+  display: inline-block;
 }
 
 .ali_logo:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
-
 
 /*注册登陆*/
 
 .ali_login_cont {
-    position: relative;
-    width: 100%;
-    min-width: 1200px;
-    height: 550px;
-    background: url(/assets/images/login_bg.jpg) no-repeat center center;
-    background-size: cover;
+  position: relative;
+  width: 100%;
+  min-width: 1200px;
+  height: 550px;
+  background: url(/assets/images/login_bg.jpg) no-repeat center center;
+  background-size: cover;
 }
 
 .ali_er_form {
-    position: absolute;
-    top: 60px;
-    right: 100px;
-    width: 300px;
-    padding: 10px 30px 60px 30px;
-    background: #fff;
-    border: 1px solid #efefef;
-    box-shadow: 0 0 10px rgba(237, 239, 241, .5);
+  position: absolute;
+  top: 60px;
+  right: 100px;
+  width: 300px;
+  padding: 10px 30px 60px 30px;
+  background: #fff;
+  border: 1px solid #efefef;
+  box-shadow: 0 0 10px rgba(237, 239, 241, 0.5);
 }
 
 .ali_er_form .el-row {
-    line-height: 36px;
-    margin: 15px 0 20px 0;
+  line-height: 36px;
+  margin: 15px 0 20px 0;
 }
 
 .no_marginbottom {
-    margin-bottom: 8px!important;
+  margin-bottom: 8px !important;
 }
 
 .ali_from {
-    position: relative;
-    font-size: 12px;
+  position: relative;
+  font-size: 12px;
 }
 
 .ali_from .el-input__inner {
-    padding-left: 36px;
+  padding-left: 36px;
 }
 
 .ali_from .icon {
-    position: absolute;
-    top: 2px;
-    left: 10px;
-    color: #999;
+  position: absolute;
+  top: 2px;
+  left: 10px;
+  color: #999;
 }
 
 .ali_tips {
-    margin: 10px 0 15px 0;
+  margin: 10px 0 15px 0;
 }
 
 .ali_tips span {
-    margin-right: 10px!important;
+  margin-right: 10px !important;
 }
-
 
 /*menu*/
 
 .el-menu {
-    background: none;
+  background: none;
 }
 
 .el-menu--horizontal .el-menu-item {
-    height: 82px;
-    line-height: 82px;
+  height: 82px;
+  line-height: 82px;
 }
 
 .el-menu-item,
 .el-submenu__title {
-    padding: 0;
+  padding: 0;
 }
 
 .el-menu--horizontal .el-menu-item a {
-    display: block;
-    height: 82px;
-    padding: 0 30px;
+  display: block;
+  height: 82px;
+  padding: 0 30px;
 }
 
-.el-menu--horizontal>.el-menu-item.is-active,
-.el-menu--horizontal>.el-submenu.is-active .el-submenu__title {
-    border-bottom: 4px solid #20A0FF;
-    color: #20A0FF;
+.el-menu--horizontal > .el-menu-item.is-active,
+.el-menu--horizontal > .el-submenu.is-active .el-submenu__title {
+  border-bottom: 4px solid #20a0ff;
+  color: #20a0ff;
 }
 
-.el-menu--horizontal>.el-menu-item:hover,
-.el-menu--horizontal>.el-submenu.is-active .el-submenu__title,
-.el-menu--horizontal>.el-submenu:hover .el-submenu__title {
-    border-bottom: 4px solid #20A0FF;
-    background: none;
-    color: #878d99;
+.el-menu--horizontal > .el-menu-item:hover,
+.el-menu--horizontal > .el-submenu.is-active .el-submenu__title,
+.el-menu--horizontal > .el-submenu:hover .el-submenu__title {
+  border-bottom: 4px solid #20a0ff;
+  background: none;
+  color: #878d99;
 }
 
 .user_seting {
-    line-height: 80px;
-    text-align: right;
-    color: #666;
+  line-height: 80px;
+  text-align: right;
+  color: #666;
 }
 
 .user_seting a:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .el-col {
-    min-height: 1px;
+  min-height: 1px;
 }
 
 .el-menu--horizontal {
-    border: none;
+  border: none;
 }
-
 
 /*body*/
 
 .ali_body {
-    width: 100%;
-    min-width:1200px;
-    background: #f2f2f4;
-    padding: 30px 0;
+  width: 100%;
+  min-width: 1200px;
+  background: #f2f2f4;
+  padding: 30px 0;
 }
 
 .ali_bodycont {
-    width: 1200px;
-    margin: 0 auto;
-    color: #999;
+  width: 1200px;
+  margin: 0 auto;
+  color: #999;
 }
 
 .ali_serach .el-input__inner,
 .ali_serach .el-button {
-    border-radius: 0;
+  border-radius: 0;
 }
 
 .ali_bodycont span {
-    margin: 0 3px;
+  margin: 0 3px;
 }
 
 .ali_maintab {
-    margin: 25px 0;
+  margin: 25px 0;
 }
 
 .ali_maintab .el-button,
 .ali_maintab .el-card {
-    border-radius: 0;
-    margin-top: -1px;
+  border-radius: 0;
+  margin-top: -1px;
 }
 
 .ali_pages {
-    text-align: center;
-    margin: 25px auto;
+  text-align: center;
+  margin: 25px auto;
 }
 
 .el-card {
-    margin-bottom: 5px;
+  margin-bottom: 5px;
 }
 
 .el-button--warning {
-    background: #f07c0f;
-    border-color: #f07c0f;
+  background: #f07c0f;
+  border-color: #f07c0f;
 }
 .ali_join_left {
-    background: #f8f9fb;
-    padding: 20px;
+  background: #f8f9fb;
+  padding: 20px;
 }
 
 .ali_lcard ul {
-    padding: 10px 0;
+  padding: 10px 0;
 }
 
 .ali_lcard ul li {
-    display: inline-block;
-    margin-right: 15px;
-    line-height: 2;
+  display: inline-block;
+  margin-right: 15px;
+  line-height: 2;
 }
 
 .ali_join_right {
-    padding-left: 20px;
+  padding-left: 20px;
 }
-.get_zwbtn{
-  width:100%;
+.get_zwbtn {
+  width: 100%;
   background: #ff6100;
-  border:1px solid #ff6100;
-  color:#fff;
+  border: 1px solid #ff6100;
+  color: #fff;
 }
-.get_zwbtn:hover{
+.get_zwbtn:hover {
   background: #ef5d03;
-  border:1px solid #ef5d03;
-  color:#fff;
+  border: 1px solid #ef5d03;
+  color: #fff;
 }
-.js_list_ha{
+.js_list_ha {
   font-size: 14px;
-  color:#20A0FF;
-  margin:10px 0;
+  color: #20a0ff;
+  margin: 10px 0;
 }
-.js_list_ha a{
-  color:#20A0FF;
+.js_list_ha a {
+  color: #20a0ff;
 }
-.join_tjlist{
+.join_tjlist {
   background: #fff;
-  padding:15px;
+  padding: 15px;
 }
-.join_tjtitle{
+.join_tjtitle {
   font-size: 14px;
-  color:#333;
-  border-bottom:1px solid #efefef;
+  color: #333;
+  border-bottom: 1px solid #efefef;
   line-height: 35px;
 }
-.join_tjlieb{
-  border-bottom:1px dotted #efefef;
-  padding:10px 0;
+.join_tjlieb {
+  border-bottom: 1px dotted #efefef;
+  padding: 10px 0;
 }
-.join_tjlieb .zw_name{
-  color:#333;
+.join_tjlieb .zw_name {
+  color: #333;
   font-size: 14px;
 }
-.join_tjlieb .zw_monmy{
-  color:#ff6100;
+.join_tjlieb .zw_monmy {
+  color: #ff6100;
   text-align: right;
 }
-.join_tjlieb .zw_add{
+.join_tjlieb .zw_add {
   text-align: right;
 }
 
 /*foot*/
 
 .ali_foot {
-    width: 1200px;
-    margin: 0 auto;
-    text-align: center;
-    line-height: 35px;
-    margin-top: 30px;
-    margin-bottom: 30px;
-    color: #666;
+  width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 35px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  color: #666;
 }
 
 input:-webkit-autofill {
-    background-image: none;
-    box-shadow: 0 0 0 1000px #fafcfd inset;
+  background-image: none;
+  box-shadow: 0 0 0 1000px #fafcfd inset;
 }
 
 .el-collapse-item__header,
 .el-collapse-item__wrap {
-    background: none;
-    color: #666;
+  background: none;
+  color: #666;
 }
 
 .el-collapse {
-    border-top: none;
+  border-top: none;
 }
 
 .ali_li {
-    width: 163px;
-    height: 38px;
-    margin: 10px 15px;
-    background: #fee409;
-    text-align: center;
-    line-height: 38px;
-    font-size: 14px;
+  width: 163px;
+  height: 38px;
+  margin: 10px 15px;
+  background: #fee409;
+  text-align: center;
+  line-height: 38px;
+  font-size: 14px;
 }
 
 ul.ali_li-list {
-    line-height: 25px;
-    width: 133px;
-    margin: 0 30px;
+  line-height: 25px;
+  width: 133px;
+  margin: 0 30px;
 }
 
 .ali_list .ali_card-list {
-    padding: 10px 20px;
+  padding: 10px 20px;
 }
 
 .ali_zwname {
-    font-size: 24px;
-    font-weight: bold;
+  font-size: 24px;
+  font-weight: bold;
 }
 
 .ali_zwmoney {
-    font-size: 18px;
-    margin: 5px 0 15px 0;
-    color: #F7BA2A;
+  font-size: 18px;
+  margin: 5px 0 15px 0;
+  color: #f7ba2a;
 }
 
 .ali_text_list {
-    line-height: 22px;
+  line-height: 22px;
 }
 
 .ali_addlist {
-    margin-top: 15px;
-    font-size: 18px;
+  margin-top: 15px;
+  font-size: 18px;
 }
 
 .ali_comname {
-    font-size: 20px;
-    margin-top: 65px;
-    color: #666;
+  font-size: 20px;
+  margin-top: 65px;
+  color: #666;
 }
 
 .ali_text {
-    margin: 10px 0 20px 0;
-    font-size: 16px;
+  margin: 10px 0 20px 0;
+  font-size: 16px;
 }
 
 .el-checkbox__label {
-    font-size: 12px;
+  font-size: 12px;
 }
 
-.el-checkbox+.el-checkbox {
-    margin-left: 10px;
+.el-checkbox + .el-checkbox {
+  margin-left: 10px;
 }
 
 .ali_bodycont span {
-    margin: 0;
+  margin: 0;
 }
 
 .serach_result {
-    margin-top: 10px;
+  margin-top: 10px;
 }
 
 .ali_select_list {
-    line-height: 28px;
-    color: #333;
+  line-height: 28px;
+  color: #333;
 }
-.el-form-item--small .el-form-item__content, .el-form-item--small .el-form-item__label{
+.el-form-item--small .el-form-item__content,
+.el-form-item--small .el-form-item__label {
   line-height: 36px;
 }
-.el-menu{
-  border:none;
+.el-menu {
+  border: none;
 }
-.p_from_list .el-input{
-  width:60%;
+.p_from_list .el-input {
+  width: 60%;
 }
 .avatar-uploader .el-upload {
   border: 1px dashed #d9d9d9;
@@ -522,7 +518,7 @@ ul.ali_li-list {
   overflow: hidden;
 }
 .avatar-uploader .el-upload:hover {
-  border-color: #409EFF;
+  border-color: #409eff;
 }
 .avatar-uploader-icon {
   font-size: 28px;
