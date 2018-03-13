@@ -7,4 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+  public onDeactivate() {
+    window.scrollTo(0, 0);
+  }
 }
