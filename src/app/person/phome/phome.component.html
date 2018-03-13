@@ -6,7 +6,7 @@
       <p class="p_phone">手机号码：130668056680</p>
       <p class="p_eamil">联系邮箱：wangkeke@gmail.com</p>
       <div class="p_listbtn">
-        <el-button type="primary">申请记录</el-button>
+        <el-button type="primary"><a routerLink="/psend">申请记录</a></el-button>
       </div>
     </div>
     <div el-col span="15" class="p_r_show">
@@ -20,11 +20,11 @@
           <p class="p_job_tips">中文简历</p>
           <p class="p_job_tips"><span>前端开发工程师</span><span>4年</span><span>深圳</span></p>
           <p class="p_sys_btn">
-            <el-button type="text">刷 新</el-button>
-            <el-button type="text">修 改</el-button>
+            <el-button type="text" (click)="updateResume('id')">刷 新</el-button>
+            <el-button type="text"><a routerLink="/presume">修 改</a></el-button>
             <el-button type="text">预 览</el-button>
-            <el-button type="text">委 托</el-button>
-            <el-button type="text">企业屏蔽</el-button>
+            <el-button type="text" (click)="handleEntrust(id)">委 托</el-button>
+            <el-button type="text" (click)="card.toggle = true">企业屏蔽</el-button>
           </p>
         </div>
       </div>
@@ -61,4 +61,45 @@
       </el-table>
     </div>
   </el-card>
+  <!--设置屏蔽企业-->
+  <div class="box-card" #card>
+    <el-dialog [title]="'企业屏蔽'" [(visible)]="card.toggle">
+      <div class="set_pinbi">
+        <div el-row>
+          <div el-col span="24">
+            <el-radio class="radio" [(model)]="setRadio" label="1">所有公司都能看到我</el-radio>
+          </div>
+        </div>
+        <div el-row>
+          <div el-col span="24">
+            <el-radio class="radio" [(model)]="setRadio" label="2">不希望以下公司看到我(最多设置5个)</el-radio>
+          </div>
+          <div el-col span="12" class="set_tag">
+            <input type="text" #comName  placeholder="请输入公司名称" class="el-input__inner">
+          </div>
+          <div el-col span="3" class="set_tag">
+            <el-button (click)="handleAddCom(comName.value)" [elDisabled]="!comName.value">添加</el-button>
+          </div>
+          <div el-col span="24" class="set_tag">
+            <el-tag *ngFor="let tag of pbComList;index as i"
+              [closable]="true"
+              (close)="handleRemove(i)"
+              [type]="tag.type">
+              {{tag.name}}
+            </el-tag>
+          </div>
+        </div>
+        <div el-row>
+          <div el-col span="24">
+            <el-radio class="radio" [(model)]="setRadio" label="3">所有公司都不能看到我</el-radio>
+          </div>
+        </div>
+        <div el-row>
+          <div el-col span="24">
+            <el-button type="primary">确定</el-button>
+          </div>
+        </div>
+      </div>
+    </el-dialog>
+  </div>
 </div>

@@ -533,3 +533,18 @@ ul.ali_li-list {
   height: 178px;
   display: block;
 }
+.el-button--primary a {
+  color: #fff;
+}
+.el-button--text a {
+  color: #409eff;
+}
+.set_pinbi .el-row {
+  margin: 25px;
+}
+.set_pinbi .set_tag {
+  margin: 15px;
+}
+.el-message {
+  z-index: 9999 !important;
+}

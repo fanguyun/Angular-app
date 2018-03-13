@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ElMessageService } from 'element-angular';
 
 @Component({
   selector: 'app-phome',
@@ -16,7 +17,43 @@ export class PhomeComponent implements OnInit {
     time: '2017-08-19',
     address: '上海市普陀区金沙江路 1518 弄'
   });
-  constructor() {}
+  setRadio: string = '1';
+  pbComList: any[] = [
+    { name: '公司一', type: 'warning' },
+    { name: '公司二', type: 'warning' }
+  ];
+  constructor(private message: ElMessageService) {}
 
   ngOnInit() {}
+  updateResume(id: any): void {
+    // 简历刷新
+    this.message['success']('刷新成功');
+  }
+  handleEntrust(id: any): void {
+    // 简历委托
+    this.message['success']('委托成功');
+  }
+  handleAddCom(compony: string): void {
+    // 添加屏蔽公司
+    if (!compony) {
+      this.message['error']('公司名称不能为空');
+    } else {
+      let isAdd = true;
+      this.pbComList.forEach((item, i) => {
+        if (item.name.includes(compony)) {
+          this.message['error']('已添加该公司');
+          isAdd = false;
+        }
+      });
+      if (isAdd) {
+        this.pbComList.push({
+          name: compony,
+          type: 'warning'
+        });
+      }
+    }
+  }
+  handleRemove(index: number): void {
+    this.pbComList.splice(index, 1);
+  }
 }
