@@ -15,6 +15,7 @@ export class PsendComponent implements OnInit {
     address: '上海市普陀区金沙江路 1518 弄',
     state: '投递成功'
   });
+  serchType: string = '1';
   constructor() {}
 
   ngOnInit() {}

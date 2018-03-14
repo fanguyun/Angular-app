@@ -548,3 +548,6 @@ ul.ali_li-list {
 .el-message {
   z-index: 9999 !important;
 }
+.send_serch {
+  margin: 35px 20px;
+}

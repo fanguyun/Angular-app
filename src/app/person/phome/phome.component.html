@@ -75,7 +75,7 @@
             <el-radio class="radio" [(model)]="setRadio" label="2">不希望以下公司看到我(最多设置5个)</el-radio>
           </div>
           <div el-col span="12" class="set_tag">
-            <input type="text" #comName  placeholder="请输入公司名称" class="el-input__inner">
+            <input type="text" #comName  placeholder="请输入公司名称" [disabled]="setRadio != '2'" class="el-input__inner">
           </div>
           <div el-col span="3" class="set_tag">
             <el-button (click)="handleAddCom(comName.value)" [elDisabled]="!comName.value">添加</el-button>
