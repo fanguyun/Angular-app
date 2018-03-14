@@ -70,28 +70,28 @@ export class PresumeComponent implements OnInit {
       sex: ['man'],
       phone: ['13866003322'],
       email: ['2897987989@gmail.com'],
-      address: [''],
-      time: ['']
+      address: ['广东省深圳市福田区沙头街道新洲七街36号绿景新苑'],
+      time: ['2000-03-01']
     });
     this.validateForm2 = this.formBuilder.group({
-      schoolName: [''],
-      times: [''],
-      majorName: [''],
-      education: [''],
-      remark: ['']
+      schoolName: ['华南理工大学'],
+      times: ['2008-2012'],
+      majorName: ['计算机科学与应用'],
+      education: ['本科'],
+      remark: ['在校期间表现优异，学生会主席']
     });
     this.validateForm3 = this.formBuilder.group({
-      comName: [''],
-      times: [''],
-      job: [''],
-      money: [''],
-      remark: ['']
+      comName: ['腾讯科技有限公司'],
+      times: ['2012.6-2014.8'],
+      job: ['产品经理'],
+      money: ['保密'],
+      remark: ['负责腾讯QQ音乐产品需求与优化']
     });
     this.validateForm4 = this.formBuilder.group({
-      money: [''],
-      jobs: [''],
-      tims: [''],
-      org: ['']
+      money: ['20K+'],
+      jobs: ['产品经理、总监'],
+      tims: ['1个月内'],
+      org: ['互联网']
     });
   }
 
