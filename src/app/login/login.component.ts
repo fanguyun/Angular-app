@@ -30,7 +30,8 @@ export class LoginComponent implements OnInit {
     if (!userName) {
       this.message['error']('账号不能为空!');
     } else {
-      if (!this.phoneReg.test(userName) && !this.emailReg.test(userName)) {
+      // if (!this.phoneReg.test(userName) && !this.emailReg.test(userName)) {
+      if (!userName) {
         this.message['error']('请输入正确的邮箱/手机号!');
       } else {
         if (!passWord) {
@@ -50,13 +51,14 @@ export class LoginComponent implements OnInit {
             .subscribe(
               res => {
                 console.log('success', res);
+                console.log(res['_body']);
                 this.message['success']('登陆成功！');
                 localStorage.setItem('meunInfo', 'yes');
                 window.location.href = '#/main';
               },
               error => {
                 console.log('error', error);
-                let newErr = JSON.parse(error._body);
+                let newErr = JSON.parse(error['_body']);
                 this.message['error'](
                   newErr.error.message + ' ' + newErr.error.details
                 );
