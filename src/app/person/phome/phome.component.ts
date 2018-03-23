@@ -4,7 +4,7 @@ import { ElMessageService } from 'element-angular';
 @Component({
   selector: 'app-phome',
   templateUrl: './phome.component.html',
-  styleUrls: ['./phome.component.css']
+  styleUrls: ['./phome.component.scss']
 })
 export class PhomeComponent implements OnInit {
   tableData: any[] = new Array(16).fill({

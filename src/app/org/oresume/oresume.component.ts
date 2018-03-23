@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-oresume',
   templateUrl: './oresume.component.html',
-  styleUrls: ['./oresume.component.css']
+  styleUrls: ['./oresume.component.scss']
 })
 export class OresumeComponent implements OnInit {
   tableData = new Array(10).fill({
@@ -12,10 +12,8 @@ export class OresumeComponent implements OnInit {
     job: '前端开发',
     mstate: '已面试',
     lstate: '已录用'
-  })
-  constructor() { }
+  });
+  constructor() {}
 
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

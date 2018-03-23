@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-psend',
   templateUrl: './psend.component.html',
-  styleUrls: ['./psend.component.css']
+  styleUrls: ['./psend.component.scss']
 })
 export class PsendComponent implements OnInit {
   tableData: any[] = new Array(20).fill({

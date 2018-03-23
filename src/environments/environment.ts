@@ -5,5 +5,5 @@
 
 export const environment = {
   production: false,
-  apiBase: 'https://aceallianceapidev.chinacloudsites.cn'
+  apiBase: 'http://aceallianceapidev.chinacloudsites.cn'
 };

@@ -1,4 +1,5 @@
 import { Component, OnInit, Inject, forwardRef } from '@angular/core';
+import { ElMessageService } from 'element-angular';
 import {
   FormBuilder,
   FormGroup,
@@ -10,7 +11,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-presume',
   templateUrl: './presume.component.html',
-  styleUrls: ['./presume.component.css']
+  styleUrls: ['./presume.component.scss']
 })
 export class PresumeComponent implements OnInit {
   labelPosition: string = 'left';
@@ -18,10 +19,12 @@ export class PresumeComponent implements OnInit {
   validateForm2: FormGroup;
   validateForm3: FormGroup;
   validateForm4: FormGroup;
+  imageUrl: '';
   constructor(
     @Inject(forwardRef(() => FormBuilder))
     private formBuilder: FormBuilder,
-    private router: Router
+    private router: Router,
+    private message: ElMessageService
   ) {}
 
   submit(): void {
@@ -101,4 +104,12 @@ export class PresumeComponent implements OnInit {
     }
     return { status: 'success' };
   };
+  successHandle(file: any): void {
+    this.imageUrl = file.raw;
+    this.message.info('文件上传成功');
+  }
+
+  errorHandle(err: any): void {
+    this.message.error('文件上传失败:' + err);
+  }
 }

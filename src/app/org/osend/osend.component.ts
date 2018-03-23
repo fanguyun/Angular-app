@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-osend',
   templateUrl: './osend.component.html',
-  styleUrls: ['./osend.component.css']
+  styleUrls: ['./osend.component.scss']
 })
 export class OsendComponent implements OnInit {
   tableData = new Array(20).fill({
@@ -13,13 +13,11 @@ export class OsendComponent implements OnInit {
     money: '面议',
     yoer: '3',
     education: '不限'
-  })
-  constructor() { }
+  });
+  constructor() {}
 
-  ngOnInit() {
+  ngOnInit() {}
+  handleMaolink(name): void {
+    console.log(name);
   }
-  handleMaolink(name):void {
-    console.log(name)
-  }
-
 }

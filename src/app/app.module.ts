@@ -20,8 +20,6 @@ import { RegisterComponent } from './register/register.component';
 import { MainComponent } from './main/main.component';
 import { JoinComponent } from './join/join.component';
 import { JoinshowComponent } from './join/joinshow/joinshow.component';
-
-/*服务*/
 import { JoinindexComponent } from './join/joinindex/joinindex.component';
 import { ProjecComponent } from './projec/projec.component';
 import { TrainComponent } from './train/train.component';
@@ -34,6 +32,9 @@ import { OsendComponent } from './org/osend/osend.component';
 import { OresumeComponent } from './org/oresume/oresume.component';
 import { OwaibaoComponent } from './org/owaibao/owaibao.component';
 
+/*服务*/
+
+/*路由*/
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },

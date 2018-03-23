@@ -7,7 +7,7 @@ import { environment } from '../../environments/environment';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
+  styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent implements OnInit {
   phoneReg: RegExp;
@@ -110,7 +110,9 @@ export class RegisterComponent implements OnInit {
                       Username: userName,
                       password: passWord,
                       VerifyCode: checkCode,
-                      RegisterType: this.type
+                      RegisterType: this.type,
+                      phoneNumber: '13000000000',
+                      emailAddress: 'null@qq.com'
                     },
                     {
                       headers: this.header
@@ -119,7 +121,8 @@ export class RegisterComponent implements OnInit {
                   .subscribe(
                     res => {
                       console.log('success', res);
-                      this.message['success']('注册成功！');
+                      this.message['success']('注册成功！请登录');
+                      window.location.href = '#/login';
                     },
                     error => {
                       console.log('error', error);

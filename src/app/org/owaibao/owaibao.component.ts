@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-owaibao',
   templateUrl: './owaibao.component.html',
-  styleUrls: ['./owaibao.component.css']
+  styleUrls: ['./owaibao.component.scss']
 })
 export class OwaibaoComponent implements OnInit {
   tableData = new Array(10).fill({
@@ -12,10 +12,8 @@ export class OwaibaoComponent implements OnInit {
     job: '新媒体运营',
     kehu: '平安银行',
     mstate: '已入职'
-  })
-  constructor() { }
+  });
+  constructor() {}
 
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

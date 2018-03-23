@@ -21,7 +21,18 @@
           </ng-template>
           <div class="p_from_list">
             <el-form [formGroup]="validateForm" label-width="100px" size="small" [show-icon]="true" [show-message]="true" el-class="form-list">
-
+              <el-form-item label="头 像：" [style.width]="'80%'">
+                <el-upload class="avatar-uploader"
+                  action="https://jsonplaceholder.typicode.com/posts/"
+                  [show-file-list]="false"
+                  (success)="successHandle($event)"
+                  (error)="errorHandle($event)">
+                  <ng-template #trigger>
+                    <img *ngIf="imageUrl" [src]="imageUrl" class="avatar">
+                    <i *ngIf="!imageUrl" class="el-icon-plus avatar-uploader-icon"></i>
+                  </ng-template>
+                </el-upload>
+              </el-form-item>
               <el-form-item label="姓 名：" [required]="true" [status]="statusCtrl('name')" [error]="messageCtrl('name')" [style.width]="'80%'">
                 <el-input formControlName="name"></el-input>
               </el-form-item>
