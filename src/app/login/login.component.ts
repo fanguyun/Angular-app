@@ -30,8 +30,7 @@ export class LoginComponent implements OnInit {
     if (!userName) {
       this.message['error']('账号不能为空!');
     } else {
-      // if (!this.phoneReg.test(userName) && !this.emailReg.test(userName)) {
-      if (!userName) {
+      if (!this.phoneReg.test(userName) && !this.emailReg.test(userName)) {
         this.message['error']('请输入正确的邮箱/手机号!');
       } else {
         if (!passWord) {

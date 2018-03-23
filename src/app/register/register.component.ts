@@ -19,6 +19,7 @@ export class RegisterComponent implements OnInit {
   valueType: number;
   timer: number;
   sendText: string;
+  verifyCodeSno: number;
   constructor(private message: ElMessageService, private http: Http) {
     this.phoneReg = /^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1}))+\d{8})$/;
     this.emailReg = /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+$/;
@@ -56,6 +57,7 @@ export class RegisterComponent implements OnInit {
             console.log('success', res);
             let successData = JSON.parse(res['_body']);
             this.message['success']('验证码为 ' + successData.result.code);
+            scope.verifyCodeSno = successData.result.sno;
             let stime = setInterval(function() {
               scope.timer--;
               scope.sendText = scope.timer + 's后重发';
@@ -109,10 +111,11 @@ export class RegisterComponent implements OnInit {
                     {
                       Username: userName,
                       password: passWord,
+                      verifyCodeSno: this.verifyCodeSno,
                       VerifyCode: checkCode,
                       RegisterType: this.type,
-                      phoneNumber: '13000000000',
-                      emailAddress: 'null@qq.com'
+                      phoneNumber: userName,
+                      emailAddress: userName + '@qq.com'
                     },
                     {
                       headers: this.header
