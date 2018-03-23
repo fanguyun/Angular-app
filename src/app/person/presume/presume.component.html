@@ -91,11 +91,18 @@
               </el-form-item>
 
               <el-form-item label="学历：">
-                <el-input formControlName="education"></el-input>
+                <el-radio-group formControlName="education">
+                  <el-radio label="1">高中及以下</el-radio>
+                  <el-radio label="2">专科</el-radio>
+                  <el-radio label="3">本科</el-radio>
+                  <el-radio label="4">硕士</el-radio>
+                  <el-radio label="5">博士</el-radio>
+                  <el-radio label="6">博士后</el-radio>
+                </el-radio-group>
               </el-form-item>
 
               <el-form-item label="在校经历：">
-                <el-input formControlName="remark" type="textarea" [rows]="5" placeholder="请输入内容"></el-input>
+                <el-input formControlName="remark" type="textarea" [rows]="8" placeholder="请输入内容"></el-input>
               </el-form-item>
 
               <el-form-item>
