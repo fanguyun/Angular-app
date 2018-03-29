@@ -49,8 +49,16 @@ export class LoginComponent implements OnInit {
             )
             .subscribe(
               res => {
-                console.log('success', res);
-                console.log(res['_body']);
+                // console.log('success', res);
+                console.log(JSON.parse(res['_body']));
+                localStorage.setItem(
+                  'USER_ID',
+                  JSON.parse(res['_body']).result.userId
+                );
+                localStorage.setItem(
+                  'USER_TOKEN',
+                  JSON.parse(res['_body']).result.accessToken
+                );
                 this.message['success']('登陆成功！');
                 localStorage.setItem('meunInfo', 'yes');
                 window.location.href = '#/main';

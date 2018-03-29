@@ -1,5 +1,7 @@
 import { Component, OnInit, Inject, forwardRef } from '@angular/core';
 import { ElMessageService } from 'element-angular';
+import { Http, Headers } from '@angular/http';
+import { environment } from '../../../environments/environment';
 import {
   FormBuilder,
   FormGroup,
@@ -24,10 +26,39 @@ export class PresumeComponent implements OnInit {
     @Inject(forwardRef(() => FormBuilder))
     private formBuilder: FormBuilder,
     private router: Router,
-    private message: ElMessageService
+    private message: ElMessageService,
+    private http: Http
   ) {}
-
+  header = new Headers({
+    Authorization: 'Bearer ' + localStorage.getItem('USER_TOKEN')
+  });
   submit(): void {
+    this.http
+      .put(
+        environment.apiBase +
+          '/api/services/app/UserProfile/UpdatePersonalUserProfile',
+        {
+          UserId: 0,
+          Name: this.validateForm.value.name,
+          Surname: 'none',
+          Gender: this.validateForm.value.sex,
+          DetialAddress: this.validateForm.value.address
+        },
+        {
+          headers: this.header
+        }
+      )
+      .subscribe(
+        res => {
+          // console.log('success', res);
+        },
+        error => {
+          console.log('error', error);
+        },
+        () => {
+          console.log('observable is now completed.');
+        }
+      );
     console.log(this.validateForm.value);
   }
   submit2(): void {
@@ -70,7 +101,7 @@ export class PresumeComponent implements OnInit {
   ngOnInit(): void {
     this.validateForm = this.formBuilder.group({
       name: ['张三', [this.cityValidator]],
-      sex: ['man'],
+      sex: ['0'],
       phone: ['13866003322'],
       email: ['2897987989@gmail.com'],
       address: ['广东省深圳市福田区沙头街道新洲七街36号绿景新苑'],
