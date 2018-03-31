@@ -101,10 +101,10 @@ export class HeadComponent implements OnInit {
     ];
     this.orgMenu = [
       { name: '首 页', url: '/job' },
-      { name: '企业管理', url: '/ohome' },
+      // { name: '企业管理', url: '/ohome' },
       { name: '职位管理', url: '/osend' },
       { name: '应聘管理', url: '/oresume' },
-      { name: '外包管理', url: '/owaibao' }
+      { name: '项目/培训管理', url: '/owaibao' }
     ];
   }
   ngDoCheck() {
