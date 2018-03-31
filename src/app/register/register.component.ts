@@ -36,6 +36,9 @@ export class RegisterComponent implements OnInit {
     this.isCheck = event;
     console.log('event', event);
   }
+  handleChange(event: any): void {
+    this.type = event;
+  }
   sendCode(userName: any): void {
     if (
       userName &&
@@ -54,7 +57,6 @@ export class RegisterComponent implements OnInit {
         )
         .subscribe(
           res => {
-            console.log('success', res);
             let successData = JSON.parse(res['_body']);
             this.message['success']('验证码为 ' + successData.result.code);
             scope.verifyCodeSno = successData.result.sno;

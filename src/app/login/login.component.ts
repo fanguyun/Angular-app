@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { Md5 } from 'ts-md5/dist/md5';
 import { Http, Headers } from '@angular/http';
 import { environment } from '../../environments/environment';
+import { base64decode } from '../base/index';
 
 @Component({
   selector: 'app-login',
@@ -41,6 +42,9 @@ export class LoginComponent implements OnInit {
             password: passWord,
             rememberClient: true
           };
+          let userData = {};
+          let userArray = [];
+          let userKey = '';
           this.http
             .post(
               environment.apiBase + '/api/TokenAuth/Authenticate',
@@ -50,7 +54,6 @@ export class LoginComponent implements OnInit {
             .subscribe(
               res => {
                 // console.log('success', res);
-                console.log(JSON.parse(res['_body']));
                 localStorage.setItem(
                   'USER_ID',
                   JSON.parse(res['_body']).result.userId
@@ -59,9 +62,27 @@ export class LoginComponent implements OnInit {
                   'USER_TOKEN',
                   JSON.parse(res['_body']).result.accessToken
                 );
+                userData = JSON.parse(
+                  base64decode(
+                    JSON.parse(res['_body']).result.accessToken.split('.')[1]
+                  )
+                );
+                for (let i in userData) {
+                  userArray.push(userData[i]);
+                }
+                userArray.forEach((item, index) => {
+                  if (index === 3) {
+                    userKey = item;
+                  }
+                });
+                localStorage.setItem('USER_KEY', userKey);
                 this.message['success']('登陆成功！');
                 localStorage.setItem('meunInfo', 'yes');
-                window.location.href = '#/main';
+                if (userKey === 'Personal') {
+                  window.location.href = '#/main';
+                } else {
+                  window.location.href = '#/job';
+                }
               },
               error => {
                 console.log('error', error);
@@ -74,8 +95,8 @@ export class LoginComponent implements OnInit {
                 console.log('observable is now completed.');
               }
             );
-          console.log(userName);
-          console.log(Md5.hashStr(passWord));
+          // console.log(userName);
+          // console.log(Md5.hashStr(passWord));
 
           // this.router.navigate(['/main']);
         }

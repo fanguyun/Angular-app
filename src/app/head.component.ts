@@ -39,14 +39,15 @@ import { Router } from '@angular/router';
             <a (click)="goPage('#/register')">注 册</a> | <a (click)="goPage('#/login')">登 录</a>
           </p>
           <p class="user_seting" *ngIf="isLogin && isMenu">
-            <a (click)="goPage('#/phome')">个人用户</a> | <a (click)="goPage('#/ohome')">企业用户</a> | <a (click)="goLoginOut()">退出</a>
+            <a (click)="goPage('#/phome')" *ngIf="userKey == 'Personal'">个人中心</a><a (click)="goPage('#/ohome')" *ngIf="userKey != 'Personal'">企业中心</a> | <a (click)="goLoginOut()">退出</a>
           </p>
         </div>
       </div>
     </div>
   </div>
   `,
-  styles: [`
+  styles: [
+    `
   .h_regise{
     line-height:80px;
   }
@@ -70,69 +71,78 @@ import { Router } from '@angular/router';
     line-height:77px;
     padding:0 30px;
   }
-  `]
+  `
+  ]
 })
-
 export class HeadComponent implements OnInit {
   title = '处理中心';
   isMenu: boolean;
   isLogin: boolean;
   isPerson: boolean;
   isOrg: boolean;
-  menuList: Array<{name: string, url: string}>;
-  personMenu: Array<{name: string, url: string}>;
-  orgMenu: Array<{name: string, url: string}>;
-  constructor(
-    private router: Router
-  ) {
-  }
+  menuList: Array<{ name: string; url: string }>;
+  personMenu: Array<{ name: string; url: string }>;
+  orgMenu: Array<{ name: string; url: string }>;
+  userKey: string;
+  constructor(private router: Router) {}
   ngOnInit() {
     this.menuList = [
-      {name: '首 页', url: '/main'},
-      {name: '求 职', url: '/join'},
-      {name: '招 聘', url: '/job'},
-      {name: '项 目', url: '/project'},
-      {name: '培 训', url: '/train'}
+      { name: '首 页', url: '/main' },
+      { name: '求 职', url: '/join' },
+      // { name: '招 聘', url: '/job' },
+      { name: '项 目', url: '/project' },
+      { name: '培 训', url: '/train' }
     ];
     this.personMenu = [
-      {name: '首 页', url: '/main'},
-      {name: '我的雄才', url: '/phome'},
-      {name: '我的申请', url: '/psend'},
-      {name: '简历管理', url: '/presume'}
+      { name: '首 页', url: '/main' },
+      { name: '我的雄才', url: '/phome' },
+      { name: '我的申请', url: '/psend' },
+      { name: '简历管理', url: '/presume' }
     ];
     this.orgMenu = [
-      {name: '首 页', url: '/main'},
-      {name: '企业管理', url: '/ohome'},
-      {name: '职位管理', url: '/osend'},
-      {name: '应聘管理', url: '/oresume'},
-      {name: '外包管理', url: '/owaibao'}
+      { name: '首 页', url: '/job' },
+      { name: '企业管理', url: '/ohome' },
+      { name: '职位管理', url: '/osend' },
+      { name: '应聘管理', url: '/oresume' },
+      { name: '外包管理', url: '/owaibao' }
     ];
   }
   ngDoCheck() {
     console.log('ngDoCheck');
+    this.userKey = localStorage.getItem('USER_KEY');
     if (this.router.url === '/login' || this.router.url === '/register') {
       this.isMenu = false;
     } else {
       this.isMenu = true;
     }
-    if (this.router.url === '/phome' || this.router.url === '/psend' || this.router.url === '/presume') {
-      this.isPerson = true
+    if (
+      this.router.url === '/phome' ||
+      this.router.url === '/psend' ||
+      this.router.url === '/presume'
+    ) {
+      this.isPerson = true;
     } else {
-      this.isPerson = false
+      this.isPerson = false;
     }
-    if (this.router.url === '/ohome' || this.router.url === '/osend' || this.router.url === '/oresume' || this.router.url === '/owaibao') {
-      this.isOrg = true
+    if (
+      this.router.url === '/job' ||
+      this.router.url === '/ohome' ||
+      this.router.url === '/osend' ||
+      this.router.url === '/oresume' ||
+      this.router.url === '/owaibao'
+    ) {
+      this.isOrg = true;
     } else {
-      this.isOrg = false
+      this.isOrg = false;
     }
     if (localStorage.getItem('meunInfo') === 'yes') {
-      this.isLogin = true
+      this.isLogin = true;
     }
   }
-  goPage (url: string): void {
+  goPage(url: string): void {
     window.location.href = url;
   }
-  goLoginOut (): void {
+  goLoginOut(): void {
     localStorage.setItem('meunInfo', 'no');
     this.isLogin = false;
     window.location.href = '#/login';
