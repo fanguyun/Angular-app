@@ -16,13 +16,13 @@
         </div>
         <div el-row>
             <div el-col span="24" class="ali_from">
-                <input type="password" #passWord placeholder="密码" auto-complete="off" class="el-input__inner" />
+                <input type="password" #passWord placeholder="密码" auto-complete="off" class="el-input__inner" (keyup.enter)="loginSubmit(userName.value, passWord.value)"/>
                 <i class="icon iconfont icon-lock"></i>
             </div>
         </div>
         <div el-row class="no_marginbottom">
             <div el-col span="24">
-                <el-button type="primary" style="width:100%;" (click)="loginSubmit(userName.value, passWord.value)">登 录</el-button>
+                <el-button type="primary" style="width:100%;" (click)="loginSubmit(userName.value, passWord.value)" (keyup.enter)="loginSubmit(userName.value, passWord.value)">登 录</el-button>
             </div>
         </div>
         <p style="text-align:right;"><a href="#" style="color:#20A0FF;">忘记密码？</a></p>
