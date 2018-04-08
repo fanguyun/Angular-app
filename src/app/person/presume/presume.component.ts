@@ -22,6 +22,11 @@ export class PresumeComponent implements OnInit {
   validateForm3: FormGroup;
   validateForm4: FormGroup;
   imageUrl: '';
+  header = new Headers({
+    'Content-Type': 'text/plain',
+    Authorization: 'Bearer ' + localStorage.getItem('USER_TOKEN')
+  });
+  userId = localStorage.getItem('USER_ID');
   constructor(
     @Inject(forwardRef(() => FormBuilder))
     private formBuilder: FormBuilder,
@@ -29,9 +34,7 @@ export class PresumeComponent implements OnInit {
     private message: ElMessageService,
     private http: Http
   ) {}
-  header = new Headers({
-    Authorization: 'Bearer ' + localStorage.getItem('USER_TOKEN')
-  });
+
   submit(): void {
     this.http
       .put(
@@ -97,8 +100,27 @@ export class PresumeComponent implements OnInit {
       ? control.errors.message
       : '';
   }
-
   ngOnInit(): void {
+    this.http
+      .get(
+        environment.apiBase +
+          '/api/services/app/UserProfile/GetPersonalUserProfile?userId=' +
+          this.userId,
+        {
+          headers: this.header
+        }
+      )
+      .subscribe(
+        res => {
+          console.log('success', res);
+        },
+        error => {
+          console.log('error', error);
+        },
+        () => {
+          console.log('observable is now completed.');
+        }
+      );
     this.validateForm = this.formBuilder.group({
       name: ['张三', [this.cityValidator]],
       sex: ['0'],

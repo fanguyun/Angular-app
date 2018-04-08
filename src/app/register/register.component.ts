@@ -125,7 +125,7 @@ export class RegisterComponent implements OnInit {
                   )
                   .subscribe(
                     res => {
-                      console.log('success', res);
+                      // console.log('success', res);
                       this.message['success']('注册成功！请登录');
                       window.location.href = '#/login';
                     },
