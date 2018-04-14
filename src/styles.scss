@@ -551,3 +551,16 @@ ul.ali_li-list {
 .send_serch {
   margin: 35px 20px;
 }
+.adress {
+  .el-input {
+    width: 100%;
+  }
+}
+.el-card,
+.el-message {
+  overflow: inherit;
+}
+.el-select-dropdown {
+  height: 260px;
+  overflow: scroll;
+}

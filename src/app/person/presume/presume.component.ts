@@ -22,10 +22,17 @@ export class PresumeComponent implements OnInit {
   validateForm3: FormGroup;
   validateForm4: FormGroup;
   imageUrl: '';
+  province: [''];
+  city: [''];
+  actionUrl: string = '';
   header = new Headers({
-    'Content-Type': 'text/plain',
+    'Content-Type': 'application/json;charset=UTF-8',
     Authorization: 'Bearer ' + localStorage.getItem('USER_TOKEN')
   });
+  heades = {
+    'Content-Type': 'text/html',
+    Authorization: 'Bearer ' + localStorage.getItem('USER_TOKEN')
+  };
   userId = localStorage.getItem('USER_ID');
   constructor(
     @Inject(forwardRef(() => FormBuilder))
@@ -34,19 +41,22 @@ export class PresumeComponent implements OnInit {
     private message: ElMessageService,
     private http: Http
   ) {}
-
   submit(): void {
+    // 提交用户个人信息
     this.http
       .put(
         environment.apiBase +
           '/api/services/app/UserProfile/UpdatePersonalUserProfile',
-        {
-          UserId: 0,
+        JSON.stringify({
+          UserId: this.userId,
           Name: this.validateForm.value.name,
           Surname: 'none',
+          MaritalStatus: this.validateForm.value.maritalStatus,
           Gender: this.validateForm.value.sex,
-          DetialAddress: this.validateForm.value.address
-        },
+          DistrictId: this.validateForm.value.cityid,
+          DetialAddress: this.validateForm.value.address,
+          Birthday: this.validateForm.value.time
+        }),
         {
           headers: this.header
         }
@@ -54,6 +64,7 @@ export class PresumeComponent implements OnInit {
       .subscribe(
         res => {
           // console.log('success', res);
+          this.message['success']('个人信息保存成功');
         },
         error => {
           console.log('error', error);
@@ -101,6 +112,8 @@ export class PresumeComponent implements OnInit {
       : '';
   }
   ngOnInit(): void {
+    this.actionUrl = environment.apiBase + '/api/services/app/File/UploadPhoto';
+    // 获取用户信息
     this.http
       .get(
         environment.apiBase +
@@ -112,7 +125,24 @@ export class PresumeComponent implements OnInit {
       )
       .subscribe(
         res => {
-          console.log('success', res);
+          // console.log('success', res);
+          let data = JSON.parse(res['_body']).result;
+          let pid =
+            Number(data.livingAddress.districtId.toString().substring(0, 2)) *
+            10000;
+          this.handleGetpro();
+          this.handleGetCity(pid);
+          this.validateForm.patchValue({
+            name: data.name,
+            sex: data.gender,
+            maritalStatus: data.maritalStatus,
+            phone: data.phoneNumber,
+            email: data.emailAddress,
+            provinceid: pid,
+            cityid: data.livingAddress.districtId,
+            address: data.livingAddress.detialAddress,
+            time: data.birthday
+          });
         },
         error => {
           console.log('error', error);
@@ -122,12 +152,15 @@ export class PresumeComponent implements OnInit {
         }
       );
     this.validateForm = this.formBuilder.group({
-      name: ['张三', [this.cityValidator]],
-      sex: ['0'],
-      phone: ['13866003322'],
-      email: ['2897987989@gmail.com'],
-      address: ['广东省深圳市福田区沙头街道新洲七街36号绿景新苑'],
-      time: ['2000-03-01']
+      name: ['', [this.cityValidator]],
+      sex: [''],
+      maritalStatus: [],
+      phone: [''],
+      email: [''],
+      provinceid: '',
+      cityid: '',
+      address: [''],
+      time: ['']
     });
     this.validateForm2 = this.formBuilder.group({
       schoolName: ['华南理工大学'],
@@ -150,7 +183,43 @@ export class PresumeComponent implements OnInit {
       org: ['互联网']
     });
   }
-
+  handleGetpro(): void {
+    // 获取省直辖市
+    this.http
+      .get(environment.apiBase + '/api/services/app/District/GetAllProvinces', {
+        headers: this.header
+      })
+      .subscribe(
+        res => {
+          this.province = JSON.parse(res['_body']).result;
+        },
+        error => {
+          console.log('error', error);
+        }
+      );
+  }
+  // 选择省获取市
+  handleGetCity(pid): void {
+    if (pid) {
+      this.http
+        .get(
+          environment.apiBase +
+            '/api/services/app/District/GetDistricts?parentCode=' +
+            pid,
+          {
+            headers: this.header
+          }
+        )
+        .subscribe(
+          res => {
+            this.city = JSON.parse(res['_body']).result;
+          },
+          error => {
+            console.log('error', error);
+          }
+        );
+    }
+  }
   cityValidator = (control: FormControl) => {
     if (!control.value) {
       return { status: 'error', message: '请填写姓名' };

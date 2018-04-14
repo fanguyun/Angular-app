@@ -108,7 +108,7 @@ export class HeadComponent implements OnInit {
     ];
   }
   ngDoCheck() {
-    console.log('ngDoCheck');
+    // console.log('ngDoCheck');
     this.userKey = localStorage.getItem('USER_KEY');
     if (this.router.url === '/login' || this.router.url === '/register') {
       this.isMenu = false;
