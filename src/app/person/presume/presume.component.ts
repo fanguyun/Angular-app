@@ -2,6 +2,7 @@ import { Component, OnInit, Inject, forwardRef } from '@angular/core';
 import { ElMessageService } from 'element-angular';
 import { Http, Headers } from '@angular/http';
 import { environment } from '../../../environments/environment';
+import { parseTime } from '../../base';
 import {
   FormBuilder,
   FormGroup,
@@ -25,12 +26,13 @@ export class PresumeComponent implements OnInit {
   province: [''];
   city: [''];
   actionUrl: string = '';
+  jobList: ['']; // 教育经历列表
   header = new Headers({
     'Content-Type': 'application/json;charset=UTF-8',
     Authorization: 'Bearer ' + localStorage.getItem('USER_TOKEN')
   });
   heades = {
-    'Content-Type': 'text/html',
+    'Content-Type': 'image/jpeg',
     Authorization: 'Bearer ' + localStorage.getItem('USER_TOKEN')
   };
   userId = localStorage.getItem('USER_ID');
@@ -55,7 +57,8 @@ export class PresumeComponent implements OnInit {
           Gender: this.validateForm.value.sex,
           DistrictId: this.validateForm.value.cityid,
           DetialAddress: this.validateForm.value.address,
-          Birthday: this.validateForm.value.time
+          Birthday: this.validateForm.value.time,
+          StartWorkYear: this.validateForm.value.workTime
         }),
         {
           headers: this.header
@@ -73,7 +76,6 @@ export class PresumeComponent implements OnInit {
           console.log('observable is now completed.');
         }
       );
-    console.log(this.validateForm.value);
   }
   submit2(): void {
     console.log(this.validateForm2.value);
@@ -112,10 +114,14 @@ export class PresumeComponent implements OnInit {
       : '';
   }
   ngOnInit(): void {
-    this.actionUrl = environment.apiBase + '/api/services/app/File/UploadPhoto';
-    // 获取用户信息
+    this.actionUrl =
+      environment.apiBase +
+      '/api/services/app/File/UploadPhoto?userId=' +
+      this.userId;
+
     this.http
       .get(
+        // 获取用户信息
         environment.apiBase +
           '/api/services/app/UserProfile/GetPersonalUserProfile?userId=' +
           this.userId,
@@ -127,9 +133,10 @@ export class PresumeComponent implements OnInit {
         res => {
           // console.log('success', res);
           let data = JSON.parse(res['_body']).result;
-          let pid =
-            Number(data.livingAddress.districtId.toString().substring(0, 2)) *
-            10000;
+          let pid = data.livingAddress
+            ? Number(data.livingAddress.districtId.toString().substring(0, 2)) *
+              10000
+            : '';
           this.handleGetpro();
           this.handleGetCity(pid);
           this.validateForm.patchValue({
@@ -139,9 +146,10 @@ export class PresumeComponent implements OnInit {
             phone: data.phoneNumber,
             email: data.emailAddress,
             provinceid: pid,
-            cityid: data.livingAddress.districtId,
-            address: data.livingAddress.detialAddress,
-            time: data.birthday
+            cityid: data.livingAddress ? data.livingAddress.districtId : '',
+            address: data.livingAddress ? data.livingAddress.detialAddress : '',
+            time: parseTime(data.birthday, '{y}-{m}-{d}'),
+            workTime: data.startWorkYear
           });
         },
         error => {
@@ -160,11 +168,13 @@ export class PresumeComponent implements OnInit {
       provinceid: '',
       cityid: '',
       address: [''],
-      time: ['']
+      time: [''],
+      workTime: [1]
     });
     this.validateForm2 = this.formBuilder.group({
       schoolName: ['华南理工大学'],
-      times: ['2008-2012'],
+      startTime: ['2008-03'],
+      endTime: ['2010-05'],
       majorName: ['计算机科学与应用'],
       education: ['本科'],
       remark: ['在校期间表现优异，学生会主席']

@@ -1,5 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject, forwardRef } from '@angular/core';
 import { ElMessageService } from 'element-angular';
+import { Http, Headers } from '@angular/http';
+import { environment } from '../../../environments/environment';
+import {
+  FormBuilder,
+  FormGroup,
+  AbstractControl,
+  FormControl
+} from '@angular/forms';
 
 @Component({
   selector: 'app-phome',
@@ -22,10 +30,59 @@ export class PhomeComponent implements OnInit {
     { name: '公司一', type: 'warning' },
     { name: '公司二', type: 'warning' }
   ];
-  constructor(private message: ElMessageService) {}
+  validateForm: FormGroup;
+  isVisible: boolean = false;
+  resumeMain: object = {};
+  userInfo: object = {};
+  header = new Headers({
+    'Content-Type': 'application/json;charset=UTF-8',
+    Authorization: 'Bearer ' + localStorage.getItem('USER_TOKEN')
+  });
+  userId = localStorage.getItem('USER_ID');
+  resumeId = localStorage.getItem('RESUME_ID') || '';
+  constructor(
+    @Inject(forwardRef(() => FormBuilder))
+    private formBuilder: FormBuilder,
+    private message: ElMessageService,
+    private http: Http
+  ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.validateForm = this.formBuilder.group({
+      name: ['', [this.requireValidator]]
+    });
+    if (this.resumeId) {
+      this.getResumeMain(this.resumeId);
+    }
+    this.getUserInfo();
+  }
+  ctrl(item: string): AbstractControl {
+    return this.validateForm.controls[item];
+  }
+
+  statusCtrl(item: string): string {
+    if (!this.validateForm.controls[item]) return;
+    const control: AbstractControl = this.validateForm.controls[item];
+    return control.dirty && control.hasError('status')
+      ? control.errors.status
+      : '';
+  }
+
+  messageCtrl(item: string): string {
+    if (!this.validateForm.controls[item]) return;
+    const control: AbstractControl = this.validateForm.controls[item];
+    return control.dirty && control.hasError('message')
+      ? control.errors.message
+      : '';
+  }
+  requireValidator = (control: FormControl) => {
+    if (!control.value) {
+      return { status: 'error', message: '该项不能为空' };
+    }
+    return { status: 'success' };
+  };
   updateResume(id: any): void {
+    this.getUserInfo();
     // 简历刷新
     this.message['success']('刷新成功');
   }
@@ -55,5 +112,81 @@ export class PhomeComponent implements OnInit {
   }
   handleRemove(index: number): void {
     this.pbComList.splice(index, 1);
+  }
+  handleAddResume(): void {
+    // 新增简历
+    this.http
+      .post(
+        environment.apiBase +
+          '/api/services/app/Resume/NewResume?userId=' +
+          this.userId +
+          '&name=' +
+          this.validateForm.value.name,
+        {},
+        {
+          headers: this.header
+        }
+      )
+      .subscribe(
+        res => {
+          let resumeId = JSON.parse(res['_body']).result;
+          this.message['success']('创建简历成功');
+          localStorage.setItem('RESUME_ID', resumeId); // 简历ID
+          this.getResumeMain(resumeId);
+          this.isVisible = false;
+        },
+        error => {
+          console.log('error', error);
+        },
+        () => {
+          console.log('observable is now completed.');
+        }
+      );
+  }
+  getResumeMain(id): void {
+    // 根据简历ID获取简历
+    this.http
+      .get(
+        environment.apiBase +
+          '/api/services/app/Resume/GetResume?resumeId=' +
+          id,
+        {
+          headers: this.header
+        }
+      )
+      .subscribe(
+        res => {
+          this.resumeMain = JSON.parse(res['_body']).result;
+        },
+        error => {
+          console.log('error', error);
+        },
+        () => {
+          console.log('observable is now completed.');
+        }
+      );
+  }
+  getUserInfo(): void {
+    this.http
+      .get(
+        // 获取用户信息
+        environment.apiBase +
+          '/api/services/app/UserProfile/GetPersonalUserProfile?userId=' +
+          this.userId,
+        {
+          headers: this.header
+        }
+      )
+      .subscribe(
+        res => {
+          this.userInfo = JSON.parse(res['_body']).result;
+        },
+        error => {
+          console.log('error', error);
+        },
+        () => {
+          console.log('observable is now completed.');
+        }
+      );
   }
 }

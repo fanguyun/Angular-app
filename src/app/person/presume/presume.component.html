@@ -78,6 +78,9 @@
                 <el-date-picker formControlName="time" format="yyyy-MM-dd"></el-date-picker>
               </el-form-item>
 
+              <el-form-item label="工作年限：">
+                <el-input-number formControlName="workTime" (modelChange)="changeHandle($event)" [min]="1" [max]="20" debounce="500"></el-input-number>
+              </el-form-item>
 
               <el-form-item>
                 <el-button type="primary" (click)="submit()">保 存</el-button>
@@ -92,6 +95,36 @@
               <span class="p_r_title">教育经历</span>
             </div>
           </ng-template>
+          <div class="p_from_list" *ngFor="let item of jobList">
+            <el-form label-width="100px"
+              [show-icon]="true" [show-message]="true" el-class="form-demo">
+
+              <el-form-item label="学校名称：">
+                {{item.school}}
+              </el-form-item>
+
+              <el-form-item label="时间段：">
+                {{item.beginDate + '-'+ item.endDate}}
+              </el-form-item>
+
+              <el-form-item label="专业名称：">
+                {{item.major}}
+              </el-form-item>
+
+              <el-form-item label="学历：">
+                {{item.degreeId}}
+              </el-form-item>
+
+              <el-form-item label="在校经历：">
+                {{item.experience}}
+              </el-form-item>
+
+              <el-form-item>
+                <el-button type="primary" (click)="handleEditJob(item.id)">编 辑</el-button>
+                <el-button (click)="handleDeleteJob(item.id)">删 除</el-button>
+              </el-form-item>
+              </el-form>
+          </div>
           <div class="p_from_list">
             <el-form [formGroup]="validateForm2" label-width="100px"
               [show-icon]="true" [show-message]="true" el-class="form-demo">
@@ -100,8 +133,9 @@
                 <el-input formControlName="schoolName"></el-input>
               </el-form-item>
 
-              <el-form-item label="时间段：">
-                <el-input formControlName="times"></el-input>
+              <el-form-item label="时间段：" class="formtime">
+                <el-date-picker [format]="'yyyy - MM'" [hidden-day]="true" formControlName="startTime" [class]="'time_dr'"></el-date-picker>
+                <el-date-picker [format]="'yyyy - MM'" [hidden-day]="true" formControlName="endTime" [class]="'time_dr'"></el-date-picker>
               </el-form-item>
 
               <el-form-item label="专业名称：">

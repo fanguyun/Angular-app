@@ -117,7 +117,7 @@ export class RegisterComponent implements OnInit {
                       VerifyCode: checkCode,
                       RegisterType: this.type,
                       phoneNumber: userName,
-                      emailAddress: userName + '@qq.com'
+                      emailAddress: userName + '@xx.com'
                     },
                     {
                       headers: this.header

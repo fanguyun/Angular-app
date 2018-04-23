@@ -135,7 +135,7 @@ export class HeadComponent implements OnInit {
     } else {
       this.isOrg = false;
     }
-    if (localStorage.getItem('meunInfo') === 'yes') {
+    if (localStorage.getItem('MENU_INFO') === 'yes') {
       this.isLogin = true;
     }
   }
@@ -143,7 +143,7 @@ export class HeadComponent implements OnInit {
     window.location.href = url;
   }
   goLoginOut(): void {
-    localStorage.setItem('meunInfo', 'no');
+    localStorage.setItem('MENU_INFO', 'no');
     this.isLogin = false;
     window.location.href = '#/login';
   }

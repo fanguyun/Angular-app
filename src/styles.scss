@@ -507,8 +507,15 @@ ul.ali_li-list {
 .el-menu {
   border: none;
 }
-.p_from_list .el-input {
-  width: 60%;
+.p_from_list {
+  .el-input-number {
+    .el-input {
+      width: 100%;
+    }
+  }
+  .el-input {
+    width: 60%;
+  }
 }
 .avatar-uploader .el-upload {
   border: 1px dashed #d9d9d9;
@@ -563,4 +570,13 @@ ul.ali_li-list {
 .el-select-dropdown {
   height: 260px;
   overflow: scroll;
+}
+.formtime {
+  .el-input {
+    width: 98%;
+  }
+  .time_dr {
+    width: 30%;
+    display: inline-block;
+  }
 }
