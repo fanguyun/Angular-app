@@ -108,7 +108,11 @@ export class HeadComponent implements OnInit {
     ];
   }
   ngDoCheck() {
-    // console.log('ngDoCheck');
+    console.log('ngDoCheck');
+    if (!localStorage.getItem('USER_KEY')) {
+      // 是否登录
+      window.location.href = '#/login';
+    }
     this.userKey = localStorage.getItem('USER_KEY');
     if (this.router.url === '/login' || this.router.url === '/register') {
       this.isMenu = false;

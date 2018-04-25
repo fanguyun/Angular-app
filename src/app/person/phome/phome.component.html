@@ -1,34 +1,36 @@
 <div class="pmain">
   <div el-row class="p_m_show">
-    <p style="text-align:center;margin:50px;">
-      <el-button type="primary" icon="plus" (click)="isVisible = true" *ngIf="!resumeId">创建简历</el-button>
+    <p style="text-align:center;margin:50px;" *ngIf="!resumeId">
+      <el-button type="primary" icon="plus" (click)="isVisible = true">创建简历</el-button>
     </p>
-    <div el-col span="9" class="p_l_show" *ngIf="resumeId">
-      <h3><span>{{userInfo.name ? userInfo.name : '-'}}</span><span>{{['男','女'][userInfo.gender]}}</span><span>{{['未婚','已婚','离异'][userInfo.maritalStatus]}}</span><a routerLink="/presume" class="p_edit_btn"><i class="el-icon-edit"></i></a></h3>
-      <p class="p_jobl">{{userInfo.startWorkYear}}年工作经验&nbsp;&nbsp;|&nbsp;&nbsp;{{userInfo.livingAddress && userInfo.livingAddress.districtFullname}}</p>
-      <p class="p_phone">手机号码：{{userInfo.phoneNumber}}</p>
-      <p class="p_eamil">联系邮箱：{{userInfo.emailAddress}}</p>
-      <div class="p_listbtn">
-        <el-button type="primary"><a routerLink="/psend">申请记录</a></el-button>
-      </div>
-    </div>
-    <div el-col span="15" class="p_r_show">
-      <div el-row>
-        <div el-col span="6">
-          <h3>我的简历</h3>
-          <p><img src="../assets/images/person.jpeg" alt="xxx" width="120" height="170"></p>
+    <div *ngIf="resumeId">
+      <div el-col span="9" class="p_l_show" >
+        <h3><span>{{userInfo.name ? userInfo.name : '-'}}</span><span>{{['男','女'][userInfo.gender]}}</span><span>{{['未婚','已婚','离异'][userInfo.maritalStatus]}}</span><a routerLink="/presume" class="p_edit_btn"><i class="el-icon-edit"></i></a></h3>
+        <p class="p_jobl">{{userInfo.startWorkYear}}年工作经验&nbsp;&nbsp;|&nbsp;&nbsp;{{userInfo.livingAddress && userInfo.livingAddress.districtFullname}}</p>
+        <p class="p_phone">手机号码：{{userInfo.phoneNumber}}</p>
+        <p class="p_eamil">联系邮箱：{{userInfo.emailAddress}}</p>
+        <div class="p_listbtn">
+          <el-button type="primary"><a routerLink="/psend">申请记录</a></el-button>
         </div>
-        <div el-col span="18" class="p_r_job_list">
-          <p class="p_ei_btn"><a href="#">导出简历</a>/<a href="#">删除简历</a></p>
-          <p class="p_job_tips">中文简历</p>
-          <p class="p_job_tips"><span>{{resumeMain.name}}</span></p>
-          <p class="p_sys_btn">
-            <el-button type="text" (click)="updateResume('id')">刷 新</el-button>
-            <el-button type="text"><a routerLink="/presume">修 改</a></el-button>
-            <el-button type="text">预 览</el-button>
-            <el-button type="text" (click)="handleEntrust(id)">委 托</el-button>
-            <el-button type="text" (click)="card.toggle = true">企业屏蔽</el-button>
-          </p>
+      </div>
+      <div el-col span="15" class="p_r_show">
+        <div el-row>
+          <div el-col span="6">
+            <h3>我的简历</h3>
+            <p><img src="../assets/images/person.jpeg" alt="xxx" width="120" height="170"></p>
+          </div>
+          <div el-col span="18" class="p_r_job_list">
+            <p class="p_ei_btn"><a href="#">导出简历</a>/<a href="#">删除简历</a></p>
+            <p class="p_job_tips">中文简历</p>
+            <p class="p_job_tips"><span>{{resumeMain.name}}</span></p>
+            <p class="p_sys_btn">
+              <el-button type="text" (click)="updateResume('id')">刷 新</el-button>
+              <el-button type="text"><a routerLink="/presume">修 改</a></el-button>
+              <el-button type="text">预 览</el-button>
+              <el-button type="text" (click)="handleEntrust(id)">委 托</el-button>
+              <el-button type="text" (click)="card.toggle = true">企业屏蔽</el-button>
+            </p>
+          </div>
         </div>
       </div>
     </div>

@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
   ) {
     this.phoneReg = /^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1}))+\d{8})$/;
     this.emailReg = /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+$/;
-    localStorage.setItem('meunInfo', 'no');
+    localStorage.setItem('MENU_INFO', 'no');
   }
   ngOnInit() {}
   header = new Headers({
@@ -77,7 +77,7 @@ export class LoginComponent implements OnInit {
                 });
                 localStorage.setItem('USER_KEY', userKey);
                 this.message['success']('登陆成功！');
-                localStorage.setItem('meunInfo', 'yes');
+                localStorage.setItem('MENU_INFO', 'yes');
                 if (userKey === 'Personal') {
                   window.location.href = '#/main';
                 } else {
@@ -85,7 +85,7 @@ export class LoginComponent implements OnInit {
                 }
               },
               error => {
-                console.log('error', error);
+                // console.log('error', error);
                 let newErr = JSON.parse(error['_body']);
                 this.message['error'](
                   newErr.error.message + ' ' + newErr.error.details

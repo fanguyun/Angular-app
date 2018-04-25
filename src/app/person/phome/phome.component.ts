@@ -51,9 +51,7 @@ export class PhomeComponent implements OnInit {
     this.validateForm = this.formBuilder.group({
       name: ['', [this.requireValidator]]
     });
-    if (this.resumeId) {
-      this.getResumeMain(this.resumeId);
-    }
+    this.getUserResume();
     this.getUserInfo();
   }
   ctrl(item: string): AbstractControl {
@@ -134,6 +132,36 @@ export class PhomeComponent implements OnInit {
           localStorage.setItem('RESUME_ID', resumeId); // 简历ID
           this.getResumeMain(resumeId);
           this.isVisible = false;
+        },
+        error => {
+          console.log('error', error);
+        },
+        () => {
+          console.log('observable is now completed.');
+        }
+      );
+  }
+  getUserResume(): void {
+    // 根据用户ID获取所有简历
+    this.http
+      .get(
+        environment.apiBase +
+          '/api/services/app/Resume/GetResumeListByUser?userId=' +
+          this.userId,
+        {
+          headers: this.header
+        }
+      )
+      .subscribe(
+        res => {
+          this.resumeId =
+            JSON.parse(res['_body']).result &&
+            JSON.parse(res['_body']).result[0]
+              ? JSON.parse(res['_body']).result[0].id
+              : '';
+          if (this.resumeId) {
+            this.getResumeMain(this.resumeId);
+          }
         },
         error => {
           console.log('error', error);
