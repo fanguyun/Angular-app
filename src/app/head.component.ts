@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, NavigationEnd} from '@angular/router';
-import "rxjs/add/operator/filter";
+import { Router, NavigationEnd } from '@angular/router';
+import 'rxjs/add/operator/filter';
 
 @Component({
-  selector: "head-cont",
+  selector: 'head-cont',
   template: `
   <div class="ali_head">
     <div class="ali_cont">
@@ -76,7 +76,7 @@ import "rxjs/add/operator/filter";
   ]
 })
 export class HeadComponent implements OnInit {
-  title = "处理中心";
+  title = '处理中心';
   isMenu: boolean;
   isLogin: boolean;
   isPerson: boolean;
@@ -95,59 +95,59 @@ export class HeadComponent implements OnInit {
   }
   ngOnInit() {
     this.menuList = [
-      { name: "首 页", url: "/main" },
-      { name: "求 职", url: "/join" },
+      { name: '首 页', url: '/main' },
+      { name: '求 职', url: '/join' },
       // { name: '招 聘', url: '/job' },
-      { name: "项 目", url: "/project" },
-      { name: "培 训", url: "/train" }
+      { name: '项 目', url: '/project' },
+      { name: '培 训', url: '/train' }
     ];
     this.personMenu = [
-      { name: "首 页", url: "/main" },
-      { name: "我的雄才", url: "/phome" },
-      { name: "我的申请", url: "/psend" },
-      { name: "简历管理", url: "/presume" }
+      { name: '首 页', url: '/main' },
+      { name: '我的雄才', url: '/phome' },
+      { name: '我的申请', url: '/psend' },
+      { name: '简历管理', url: '/presume' }
     ];
     this.orgMenu = [
-      { name: "首 页", url: "/job" },
+      { name: '首 页', url: '/job' },
       // { name: '企业管理', url: '/ohome' },
-      { name: "职位管理", url: "/osend" },
-      { name: "应聘管理", url: "/oresume" },
-      { name: "项目/培训管理", url: "/owaibao" }
+      { name: '职位管理', url: '/osend' },
+      { name: '应聘管理', url: '/oresume' },
+      { name: '项目/培训管理', url: '/owaibao' }
     ];
   }
-  setInfo() {
+  setInfo(): void {
     // console.log("ngDoCheck");
-    if (!localStorage.getItem("USER_KEY")) {
+    if (!localStorage.getItem('USER_KEY')) {
       // 是否登录
-      window.location.href = "#/login";
+      window.location.href = '#/login';
     }
-    this.userKey = localStorage.getItem("USER_KEY");
-    if (this.router.url === "/login" || this.router.url === "/register") {
+    this.userKey = localStorage.getItem('USER_KEY');
+    if (this.router.url === '/login' || this.router.url === '/register') {
       this.isMenu = false;
     } else {
       this.isMenu = true;
     }
     if (
-      this.router.url === "/phome" ||
-      this.router.url === "/psend" ||
-      this.router.url === "/presume"
+      this.router.url === '/phome' ||
+      this.router.url === '/psend' ||
+      this.router.url === '/presume'
     ) {
       this.isPerson = true;
     } else {
       this.isPerson = false;
     }
     if (
-      this.router.url === "/job" ||
-      this.router.url === "/ohome" ||
-      this.router.url === "/osend" ||
-      this.router.url === "/oresume" ||
-      this.router.url === "/owaibao"
+      this.router.url === '/job' ||
+      this.router.url === '/ohome' ||
+      this.router.url === '/osend' ||
+      this.router.url === '/oresume' ||
+      this.router.url === '/owaibao'
     ) {
       this.isOrg = true;
     } else {
       this.isOrg = false;
     }
-    if (localStorage.getItem("MENU_INFO") === "yes") {
+    if (localStorage.getItem('MENU_INFO') === 'yes') {
       this.isLogin = true;
     }
   }
@@ -155,8 +155,8 @@ export class HeadComponent implements OnInit {
     window.location.href = url;
   }
   goLoginOut(): void {
-    localStorage.setItem("MENU_INFO", "no");
+    localStorage.setItem('MENU_INFO', 'no');
     this.isLogin = false;
-    window.location.href = "#/login";
+    window.location.href = '#/login';
   }
 }

@@ -92,7 +92,7 @@ export class PresumeComponent implements OnInit {
   handleMaolink(name): void {
     let offTop = document.getElementById(name).offsetTop;
     document.body.scrollTop = document.documentElement.scrollTop = offTop;
-    this.router.navigate(['presume'], { fragment: name });
+    // this.router.navigate(['presume'], { fragment: name });
   }
   ctrl(item: string): AbstractControl {
     return this.validateForm.controls[item];
